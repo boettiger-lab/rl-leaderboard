@@ -1,14 +1,11 @@
 #!/bin/bash
 
-## Download all the models:
-wget --content-disposition --trust-server-names -i models.txt
-
-
 ## FIXME:
 # really we ought to clone full repos, install requirements.txt, then run score
+repo_name=$(sed '1q;d' repos.txt)
+git clone $repo_name
 
 ## Score the models:
-python score_model.py -m fishing-v1-A2C-team_vanilla.zip
-
-cat models.txt | xargs basename
-#| xargs score_model.py
+dir_name=$(echo $repo_name | cut -d'/' -f 5 | cut -d'.' -f 1)
+python score_model.py -m $dir_name/*.zip
+rm -rf $dir_name
