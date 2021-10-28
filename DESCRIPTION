@@ -1,0 +1,4 @@
+Package: compendium
+Version: 0.1.0
+Depends: tidyverse, plotly, flexdashboard, ggiraph, patchwork, bslib, showtext
+
