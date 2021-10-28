@@ -11,8 +11,11 @@ def filehash(filename):
     return readable_hash
 
 def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
+    
+    ## FIXME only add score if hashid (or hashid+env) is not already found? 
     row_contents = {"agent": agent,
                     "env": env,
+                    "team": team,
                     "mean": mean, 
                     "std": std,
                     "id": hashid,
@@ -21,10 +24,11 @@ def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
     with open(file, 'a+') as stream:
         writer = csv.DictWriter(stream, 
                                 fieldnames = ["agent", 
-                                              "env", 
+                                              "env",
+                                              "team",
                                               "mean", 
                                               "std", 
-                                              "url", 
+                                              "id", 
                                               "date"])
         if(not has_header):                                      
             writer.writeheader()
