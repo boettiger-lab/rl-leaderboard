@@ -17,6 +17,8 @@ jobs:
     # Skip CI if [ci skip] in the commit message
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         python-version: 3.8
@@ -33,3 +35,10 @@ jobs:
     - name: score
       run: |
         ./run.sh
+    - name: upload
+      run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add leaderboard.csv
+          git commit -m 'new scores' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
