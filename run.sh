@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python read_sheets.py
+
 while read p; do
   ## FIXME:
   # really we ought to clone full repos, install requirements.txt, then run score
