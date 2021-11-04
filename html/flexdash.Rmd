@@ -1,0 +1,81 @@
+---
+title: "Conservation Agents Leaderboard"
+output: flexdashboard::flex_dashboard
+---
+```{r, include=FALSE}
+library(dplyr)
+library(flexdashboard)
+library(DT)
+library(crosstalk)
+
+# Function to create a gym column from the listed env
+convert_col <- function(column) {
+  if (grepl("fishing", column)) {
+    output <- "Gym Fishing"
+  }
+  else if (grepl("ays", column)) {
+    output <- "Gym Climate"
+  }
+  else if (grepl("wildfire", column)) {
+    output <- "Gym Wildfire"
+  }
+  else if (grepl("conservation", column)) {
+    output <- "Gym Conservation"
+  }
+  return(output)
+}
+
+leaderboard <- read.csv("../leaderboard.csv") %>% select(-c(date, id))
+leaderboard$gym <- mapply(convert_col, leaderboard$env)
+shared_leaderboard <-  SharedData$new(leaderboard)
+```   
+
+Column{.sidebar data-width=300}
+---------
+
+#### Filters
+
+```{r envfilters}
+filter_select(
+  id = "Gym",
+  label = "Gym",
+  sharedData = shared_leaderboard,
+  group = ~gym,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Environments",
+  label = "Env",
+  sharedData = shared_leaderboard,
+  group = ~env,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Agents",
+  label = "Agent",
+  sharedData = shared_leaderboard,
+  group = ~agent,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Teams",
+  label = "Team",
+  sharedData = shared_leaderboard,
+  group = ~team,
+  multiple = FALSE
+)
+
+
+```
+
+
+Column
+-------------------------------------
+   
+
+```{r}
+shared_leaderboard %>% DT::datatable(fillContainer = FALSE)
+```   
