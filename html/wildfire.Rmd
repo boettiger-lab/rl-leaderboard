@@ -1,0 +1,68 @@
+---
+title: "Conservation Agents Leaderboard"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: 
+      bootswatch: cosmo
+      
+    source_code: "https://github.com/eco4cast/neon4cast-dashboard"
+    navbar:
+    - { title: "Fishing", href: "fishing.html", target: "_blank"}
+    - { title: "Conservation", href: "conservation.html", target: "_blank"}
+    - { title: "Climate", href: "climate.html", target: "_blank"}
+    - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+---
+```{r, include=FALSE}
+library(dplyr)
+library(flexdashboard)
+library(DT)
+library(crosstalk)
+source("utils.R")
+
+shared_leaderboard <- select_leaderboard("Gym Wildfire") %>% select(-env_kwargs)
+shared_leaderboard <- SharedData$new(shared_leaderboard)
+```   
+
+Column{.sidebar data-width=300}
+---------
+
+#### Filters
+
+```{r envfilters}
+filter_select(
+  id = "Environments",
+  label = "Env",
+  sharedData = shared_leaderboard,
+  group = ~env,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Agents",
+  label = "Agent",
+  sharedData = shared_leaderboard,
+  group = ~agent,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Teams",
+  label = "Team",
+  sharedData = shared_leaderboard,
+  group = ~team,
+  multiple = FALSE
+)
+
+
+```
+
+
+Column
+-------------------------------------
+   
+
+```{r}
+shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
+```   

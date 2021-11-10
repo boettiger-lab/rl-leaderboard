@@ -1,14 +1,21 @@
 #!/bin/bash
+pip install -r requirements.txt > /dev/null
+python read_sheets.py
 
-## Download all the models:
-wget --content-disposition --trust-server-names -i models.txt
-
-
-## FIXME:
-# really we ought to clone full repos, install requirements.txt, then run score
-
-## Score the models:
-python score_model.py -m fishing-v1-A2C-team_vanilla.zip
-
-cat models.txt | xargs basename
-#| xargs score_model.py
+while read p; do
+  # read_sheets creates a txt with the repo urls from the google form.
+  # We then clone each repo and score the models in the repos
+  git clone $p
+  # This slices the directory name from the repo url
+  dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
+  # Creating virtual env to install requirements
+  python3 -m venv .virtualenv/$dir_name
+  source .virtualenv/$dir_name/bin/activate
+  pip install -r $dir_name/requirements.txt > /dev/null
+  # Scoring model finally
+  python score_model.py -d $dir_name
+  # Cleaning up
+  rm -rf $dir_name
+  deactivate
+  rm -rf .virtualenv/$dir_name
+done <repo_urls.txt

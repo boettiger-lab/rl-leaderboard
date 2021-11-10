@@ -1,0 +1,99 @@
+---
+title: "Conservation Agents Leaderboard"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: 
+      bootswatch: cosmo
+      
+    source_code: "https://github.com/eco4cast/neon4cast-dashboard"
+    navbar:
+    - { title: "Fishing", href: "fishing.html", target: "_blank"}
+    - { title: "Conservation", href: "conservation.html", target: "_blank"}
+    - { title: "Climate", href: "climate.html", target: "_blank"}
+    - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+---
+```{r, include=FALSE}
+library(dplyr)
+library(flexdashboard)
+library(DT)
+library(crosstalk)
+library(reticulate)
+source("utils.R")
+
+fishing_leaderboard <- select_leaderboard("Gym Fishing")
+```   
+
+```{python}
+import copy
+
+fishing_leaderboard = copy.copy(r.fishing_leaderboard)
+fishing_leaderboard['env_kwargs'] = fishing_leaderboard['env_kwargs'].apply(lambda x: eval(x))
+fishing_leaderboard['r'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['r'])
+fishing_leaderboard['K'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['K'])
+```
+
+```{r}
+fishing_leaderboard <- py$fishing_leaderboard %>% select(-env_kwargs)
+shared_leaderboard <- SharedData$new(fishing_leaderboard)
+```
+
+
+Column{.sidebar data-width=300}
+---------
+
+#### Filters
+
+```{r envfilters}
+filter_select(
+  id = "Environments",
+  label = "Env",
+  sharedData = shared_leaderboard,
+  group = ~env,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Agents",
+  label = "Agent",
+  sharedData = shared_leaderboard,
+  group = ~agent,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "Teams",
+  label = "Team",
+  sharedData = shared_leaderboard,
+  group = ~team,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "r",
+  label = "r",
+  sharedData = shared_leaderboard,
+  group = ~r,
+  multiple = FALSE
+)
+
+filter_select(
+  id = "K",
+  label = "K",
+  sharedData = shared_leaderboard,
+  group = ~r,
+  multiple = FALSE
+)
+
+
+```
+
+
+Column
+-------------------------------------
+   
+
+```{r}
+shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
+```   

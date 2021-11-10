@@ -1,1 +1,0 @@
-https://minio.cirrus.carlboettiger.info/shared-data/rl-models/fishing-v1-A2C-team_vanilla.zip
