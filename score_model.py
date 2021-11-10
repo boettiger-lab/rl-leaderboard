@@ -50,7 +50,8 @@ def main():  # noqa: C901
                 env = env_name,
                 team = team, 
                 mean = score[0], 
-                std = score[1], 
+                std = score[1],
+                env_kwargs = env_kwargs,
                 hashid = filehash(model_name), 
                 file = "leaderboard.csv")
     
