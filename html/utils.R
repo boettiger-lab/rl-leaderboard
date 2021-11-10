@@ -22,6 +22,6 @@ select_leaderboard <- function(gym_name) {
   leaderboard <- read.csv("../leaderboard.csv") %>% select(-c(date, id))
   leaderboard$gym <- mapply(convert_col, leaderboard$env)
   selected_leaderboard <- leaderboard %>% filter(gym == gym_name) %>% head() %>% select(-gym)
-  shared_leaderboard <-  SharedData$new(selected_leaderboard)
-  return(shared_leaderboard)
+  #shared_leaderboard <-  SharedData$new(selected_leaderboard)
+  return(selected_leaderboard)
 }

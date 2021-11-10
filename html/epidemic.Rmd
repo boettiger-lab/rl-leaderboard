@@ -21,7 +21,8 @@ library(DT)
 library(crosstalk)
 source("utils.R")
 
-shared_leaderboard <- select_leaderboard("Gym Epidemic")
+shared_leaderboard <- select_leaderboard("Gym Epidemic") %>% select(-env_kwargs)
+shared_leaderboard <- SharedData$new(shared_leaderboard)
 ```   
 
 Column{.sidebar data-width=300}
