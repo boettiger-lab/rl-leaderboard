@@ -2,13 +2,13 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 # Workflow derived from https://github.com/r-lib/actions/tree/master/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
-on:
+#on:
 #  schedule:
 #    - cron: '0 6 * * *'
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+#  push:
+#    branches:
+#      - main
+#  workflow_dispatch:
 
 name: score
 
