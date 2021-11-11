@@ -23,12 +23,13 @@ library(reticulate)
 source("utils.R")
 
 fishing_leaderboard <- select_leaderboard("Gym Fishing")
-```   
+```
 
 ```{python}
 import copy
 
 fishing_leaderboard = copy.copy(r.fishing_leaderboard)
+fishing_leaderboard.loc[fishing_leaderboard['env_kwargs'] == "", "env_kwargs"] = "{'r':0.3, 'K':1}"
 fishing_leaderboard['env_kwargs'] = fishing_leaderboard['env_kwargs'].apply(lambda x: eval(x))
 fishing_leaderboard['r'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['r'])
 fishing_leaderboard['K'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['K'])
@@ -82,7 +83,7 @@ filter_select(
   id = "K",
   label = "K",
   sharedData = shared_leaderboard,
-  group = ~r,
+  group = ~K,
   multiple = FALSE
 )
 

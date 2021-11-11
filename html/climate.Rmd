@@ -19,11 +19,25 @@ library(dplyr)
 library(flexdashboard)
 library(DT)
 library(crosstalk)
+library(reticulate)
 source("utils.R")
 
-shared_leaderboard <- select_leaderboard("Gym Climate") %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(shared_leaderboard)
+climate_leaderboard <- select_leaderboard("Gym Climate")
 ```   
+
+```{python}
+import copy
+
+climate_leaderboard = copy.copy(r.climate_leaderboard)
+climate_leaderboard.loc[climate_leaderboard['env_kwargs'] == "", "env_kwargs"] = "{'reward_type': 'survive'}"
+climate_leaderboard['env_kwargs'] = climate_leaderboard['env_kwargs'].apply(lambda x: eval(x))
+climate_leaderboard['reward_type'] = climate_leaderboard['env_kwargs'].apply(lambda x: x['reward_type'])
+```
+
+```{r}
+climate_leaderboard <- py$climate_leaderboard %>% select(-env_kwargs)
+shared_leaderboard <- SharedData$new(climate_leaderboard)
+```
 
 Column{.sidebar data-width=300}
 ---------
@@ -55,6 +69,13 @@ filter_select(
   multiple = FALSE
 )
 
+filter_select(
+  id = "Reward Type",
+  label = "Reward Type",
+  sharedData = shared_leaderboard,
+  group = ~reward_type,
+  multiple = FALSE
+)
 
 ```
 
