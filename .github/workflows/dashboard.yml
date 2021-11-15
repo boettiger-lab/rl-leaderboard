@@ -8,35 +8,36 @@
 #      - main
 #  workflow_dispatch:
 
-name: render-rmarkdown
-
-jobs:
-  render-rmarkdown:
-    runs-on: ubuntu-latest
-    container: rocker/geospatial
-    # Need to figure out json secrets for read_sheets.py
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-#      - uses: r-lib/actions/setup-renv@v1
-      - name: Install
-        run: |
-          Rscript -e "install.packages('remotes')"
-          Rscript -e "remotes::install_deps()"
-      - name: Render
-        shell: Rscript {0}
-        run: |-
-          rmarkdown::render("html/fishing.Rmd", envir = globalenv())
-          rmarkdown::render("html/cliamte.Rmd", envir = globalenv())
-      - name: Commit results
-        run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add html/fishing.Rmd
-          git add html/climate.Rmd
-          git commit -m 'Re-build Rmarkdown files' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+#name: render-rmarkdown
+#
+#jobs:
+#  render-rmarkdown:
+#    runs-on: ubuntu-latest
+#    container: rocker/geospatial
+#    # Need to figure out json secrets for read_sheets.py
+#    env:
+#      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+##      - uses: r-lib/actions/setup-renv@v1
+#      - name: Install
+#        run: |
+#          Rscript -e "install.packages('remotes')"
+#          Rscript -e "remotes::install_deps()"
+#      - name: Render
+#        shell: Rscript {0}
+#        run: |-
+#          rmarkdown::render("html/fishing.Rmd", envir = globalenv())
+#          rmarkdown::render("html/cliamte.Rmd", envir = globalenv())
+#      - name: Commit results
+#        run: |
+#          git config --local user.name "$GITHUB_ACTOR"
+#          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+#          git add html/fishing.Rmd
+#          git add html/climate.Rmd
+#          git commit -m 'Re-build Rmarkdown files' || echo "No changes to commit"
+#          git push origin || echo "No changes to commit"
+#

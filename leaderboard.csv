@@ -1,3 +1,3 @@
 agent,env,team,mean,std,hash_url,date
-PPO,ays-v0,team_vanilla,99.0,0.0,https://github.com/boettiger-lab/rl-leaderboard/blob/274c1d2e9f4912bcb851c9a5ea8de6a4d62c8cd7/test-rl-leaderboard/ays-v0-PPO-team_vanilla.zip,2021-11-15 21:35:14.785383
-SAC,fishing-v1,team_vanilla,7.756014,0.0,https://github.com/boettiger-lab/rl-leaderboard/blob/274c1d2e9f4912bcb851c9a5ea8de6a4d62c8cd7/test-rl-leaderboard1/fishing-v1-SAC-team_vanilla.zip,2021-11-15 21:36:46.883951
+PPO,ays-v0,team_vanilla,99.0,0.0,https://github.com/boettiger-lab/rl-leaderboard/blob/b0600bb2d3ed572596a2161f13dd50bc79fe6fd2/models/test-rl-leaderboard/ays-v0-PPO-team_vanilla.zip,2021-11-15 23:11:10.116496
+SAC,fishing-v1,team_vanilla,7.756014,0.0,https://github.com/boettiger-lab/rl-leaderboard/blob/b0600bb2d3ed572596a2161f13dd50bc79fe6fd2/models/test-rl-leaderboard1/fishing-v1-SAC-team_vanilla.zip,2021-11-15 23:12:41.062380
