@@ -12,6 +12,7 @@ while read p; do
   python3 -m venv .virtualenv/$dir_name
   source .virtualenv/$dir_name/bin/activate
   pip install -r $dir_name/requirements.txt > /dev/null
+  pip install gitpython
   # Scoring model finally
   python score_model.py -d $dir_name
   # Cleaning up

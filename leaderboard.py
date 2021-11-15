@@ -10,7 +10,7 @@ def filehash(filename):
     readable_hash = hashlib.sha256(bytes).hexdigest();
     return readable_hash
 
-def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
+def leaderboard(agent, env, team, mean, std, hash_url, file = "leaderboard.csv"):
     
     ## FIXME only add score if hashid (or hashid+env) is not already found? 
     row_contents = {"agent": agent,
@@ -18,7 +18,7 @@ def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
                     "team": team,
                     "mean": mean, 
                     "std": std,
-                    "id": hashid,
+                    "hash_url": hash_url,
                     "date": datetime.now()}
     has_header = os.path.exists(file)                
     with open(file, 'a+') as stream:
@@ -28,7 +28,7 @@ def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
                                               "team",
                                               "mean", 
                                               "std",
-                                              "id", 
+                                              "hash_url",
                                               "date"])
         if(not has_header):                                      
             writer.writeheader()
