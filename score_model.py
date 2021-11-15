@@ -54,7 +54,7 @@ def main():  # noqa: C901
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dir", help="Directory name with model", type=str)
     args = parser.parse_args()
-    model_name = glob.glob(f"{args.dir}/*.zip")[0]
+    model_name = glob.glob(f"models/{args.dir}/*.zip")[0]
     
     
     parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)

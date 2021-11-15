@@ -8,15 +8,16 @@ while read p; do
   git clone $p
   # This slices the directory name from the repo url
   dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
+  mv $dir_name models/
   # Creating virtual env to install requirements
   python3 -m venv .virtualenv/$dir_name
   source .virtualenv/$dir_name/bin/activate
-  pip install -r $dir_name/requirements.txt > /dev/null
+  pip install -r models/$dir_name/requirements.txt > /dev/null
   pip install gitpython
   # Scoring model finally
   python score_model.py -d $dir_name
   # Cleaning up
-  rm -rf $dir_name
+  rm -rf models/$dir_name
   deactivate
   rm -rf .virtualenv/$dir_name
 done <repo_urls.txt
