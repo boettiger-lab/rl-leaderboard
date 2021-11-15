@@ -21,48 +21,16 @@ library(DT)
 library(crosstalk)
 source("utils.R")
 
-shared_leaderboard <- select_leaderboard("Gym Wildfire") %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(shared_leaderboard)
+wildfire_leaderboard <- select_gym_leaderboard("Gym Wildfire")
 ```   
 
-Column{.sidebar data-width=300}
----------
-
-#### Filters
-
-```{r envfilters}
-filter_select(
-  id = "Environments",
-  label = "Env",
-  sharedData = shared_leaderboard,
-  group = ~env,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Agents",
-  label = "Agent",
-  sharedData = shared_leaderboard,
-  group = ~agent,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Teams",
-  label = "Team",
-  sharedData = shared_leaderboard,
-  group = ~team,
-  multiple = FALSE
-)
 
 
-```
-
-
-Column
+Column {.tabset}
 -------------------------------------
    
+### wildfireCA-v0
 
 ```{r}
-shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
-```   
+display_env_leaderboard(wildfire_leaderboard, "wildfireCA-v0")
+```

@@ -21,48 +21,21 @@ library(DT)
 library(crosstalk)
 source("utils.R")
 
-shared_leaderboard <- select_leaderboard("Gym Epidemic") %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(shared_leaderboard)
+epidemic_leaderboard <- select_gym_leaderboard("Gym Epidemic")
 ```   
 
-Column{.sidebar data-width=300}
----------
 
-#### Filters
-
-```{r envfilters}
-filter_select(
-  id = "Environments",
-  label = "Env",
-  sharedData = shared_leaderboard,
-  group = ~env,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Agents",
-  label = "Agent",
-  sharedData = shared_leaderboard,
-  group = ~agent,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Teams",
-  label = "Team",
-  sharedData = shared_leaderboard,
-  group = ~team,
-  multiple = FALSE
-)
-
-
-```
-
-
-Column
+Column {.tabset}
 -------------------------------------
    
+### sir-v0
 
 ```{r}
-shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
-```   
+display_env_leaderboard(epidemic_leaderboard, "sir-v0")
+```
+
+### sir_multi-v0
+
+```{r}
+display_env_leaderboard(epidemic_leaderboard, "sir_multi-v0")
+```
