@@ -27,7 +27,7 @@ def leaderboard(agent, env, team, mean, std, hashid, file = "leaderboard.csv"):
                                               "env",
                                               "team",
                                               "mean", 
-                                              "std", 
+                                              "std",
                                               "id", 
                                               "date"])
         if(not has_header):                                      

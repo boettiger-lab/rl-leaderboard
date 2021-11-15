@@ -22,68 +22,22 @@ library(crosstalk)
 library(reticulate)
 source("utils.R")
 
-climate_leaderboard <- select_leaderboard("Gym Climate")
-```   
-
-```{python}
-import copy
-
-climate_leaderboard = copy.copy(r.climate_leaderboard)
-climate_leaderboard.loc[climate_leaderboard['env_kwargs'] == "", "env_kwargs"] = "{'reward_type': 'survive'}"
-climate_leaderboard['env_kwargs'] = climate_leaderboard['env_kwargs'].apply(lambda x: eval(x))
-climate_leaderboard['reward_type'] = climate_leaderboard['env_kwargs'].apply(lambda x: x['reward_type'])
-```
-
-```{r}
-climate_leaderboard <- py$climate_leaderboard %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(climate_leaderboard)
-```
-
-Column{.sidebar data-width=300}
----------
-
-#### Filters
-
-```{r envfilters}
-filter_select(
-  id = "Environments",
-  label = "Env",
-  sharedData = shared_leaderboard,
-  group = ~env,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Agents",
-  label = "Agent",
-  sharedData = shared_leaderboard,
-  group = ~agent,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Teams",
-  label = "Team",
-  sharedData = shared_leaderboard,
-  group = ~team,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Reward Type",
-  label = "Reward Type",
-  sharedData = shared_leaderboard,
-  group = ~reward_type,
-  multiple = FALSE
-)
-
+climate_leaderboard <- select_gym_leaderboard("Gym Climate")
 ```
 
 
-Column
+Column {.tabset}
 -------------------------------------
    
+### ays-v0
 
 ```{r}
-shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
-```   
+display_env_leaderboard(climate_leaderboard, "ays-v0")
+```
+
+
+### dice-v0
+
+```{r}
+display_env_leaderboard(climate_leaderboard, "dice-v0")
+```

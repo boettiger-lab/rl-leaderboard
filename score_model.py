@@ -28,20 +28,13 @@ def main():  # noqa: C901
     args = parser.parse_args()
     model_name = glob.glob(f"{args.dir}/*.zip")[0]
     
-    with open(f'{args.dir}/env_kwargs.yaml') as file:
-        # The FullLoader parameter handles the conversion from YAML
-        # scalar values to Python the dictionary format
-        env_kwargs = yaml.load(file, Loader=yaml.FullLoader)
     
     parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
     env_name = parsed.group(1)
     agent_name = parsed.group(2)
     team = parsed.group(3)
     import_gym(env_name)
-    if env_kwargs is None:
-        env = Monitor(gym.make(env_name))
-    else:
-        env = Monitor(gym.make(env_name, **env_kwargs))
+    env = Monitor(gym.make(env_name))
     agent = MODEL[agent_name]
     model = agent.load(model_name[:-4])
     score = evaluate_policy(model, env, n_eval_episodes=100)
@@ -51,7 +44,7 @@ def main():  # noqa: C901
                 team = team, 
                 mean = score[0], 
                 std = score[1],
-                env_kwargs = env_kwargs,
+                # put link in here
                 hashid = filehash(model_name), 
                 file = "leaderboard.csv")
     

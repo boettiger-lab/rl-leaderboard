@@ -6,7 +6,7 @@ output:
     theme: 
       bootswatch: cosmo
       
-    source_code: "https://github.com/eco4cast/neon4cast-dashboard"
+    source_code: "https://github.com/boettiger-lab/rl-leaderboard"
     navbar:
     - { title: "Fishing", href: "fishing.html", target: "_blank"}
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
@@ -22,79 +22,90 @@ library(crosstalk)
 library(reticulate)
 source("utils.R")
 
-fishing_leaderboard <- select_leaderboard("Gym Fishing")
+fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 ```
 
-```{python}
-import copy
-
-fishing_leaderboard = copy.copy(r.fishing_leaderboard)
-fishing_leaderboard.loc[fishing_leaderboard['env_kwargs'] == "", "env_kwargs"] = "{'r':0.3, 'K':1}"
-fishing_leaderboard['env_kwargs'] = fishing_leaderboard['env_kwargs'].apply(lambda x: eval(x))
-fishing_leaderboard['r'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['r'])
-fishing_leaderboard['K'] = fishing_leaderboard['env_kwargs'].apply(lambda x: x['K'])
-```
-
-```{r}
-fishing_leaderboard <- py$fishing_leaderboard %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(fishing_leaderboard)
-```
-
-
-Column{.sidebar data-width=300}
----------
-
-#### Filters
-
-```{r envfilters}
-filter_select(
-  id = "Environments",
-  label = "Env",
-  sharedData = shared_leaderboard,
-  group = ~env,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Agents",
-  label = "Agent",
-  sharedData = shared_leaderboard,
-  group = ~agent,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Teams",
-  label = "Team",
-  sharedData = shared_leaderboard,
-  group = ~team,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "r",
-  label = "r",
-  sharedData = shared_leaderboard,
-  group = ~r,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "K",
-  label = "K",
-  sharedData = shared_leaderboard,
-  group = ~K,
-  multiple = FALSE
-)
-
-
-```
-
-
-Column
+Column {.tabset}
 -------------------------------------
    
+### fishing-v0 
 
-```{r}
-shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
-```   
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v0')
+``` 
+
+### fishing-v1 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v1')
+``` 
+
+
+### fishing-v2 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
+``` 
+
+
+### fishing-v3 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v3')
+``` 
+
+
+### fishing-v4 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v4')
+``` 
+
+
+### fishing-v5 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v5')
+``` 
+
+
+### fishing-v6 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v6')
+``` 
+
+
+### fishing-v7 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v7')
+``` 
+
+
+### fishing-v8 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v8')
+``` 
+
+
+### fishing-v9 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v9')
+``` 
+
+
+### fishing-v10 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v10')
+``` 
+
+
+### fishing-v11 
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v11')
+``` 

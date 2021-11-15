@@ -21,48 +21,66 @@ library(DT)
 library(crosstalk)
 source("utils.R")
 
-shared_leaderboard <- select_leaderboard("Gym Conservation") %>% select(-env_kwargs)
-shared_leaderboard <- SharedData$new(shared_leaderboard)
+conservation_leaderboard <- select_gym_leaderboard("Gym Conservation")
 ```   
 
-Column{.sidebar data-width=300}
----------
 
-#### Filters
+Column {.tabset}
+-------------------------------------
+   
+### conservation-v0
 
-```{r envfilters}
-filter_select(
-  id = "Environments",
-  label = "Env",
-  sharedData = shared_leaderboard,
-  group = ~env,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Agents",
-  label = "Agent",
-  sharedData = shared_leaderboard,
-  group = ~agent,
-  multiple = FALSE
-)
-
-filter_select(
-  id = "Teams",
-  label = "Team",
-  sharedData = shared_leaderboard,
-  group = ~team,
-  multiple = FALSE
-)
-
-
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
 ```
 
 
-Column
--------------------------------------
-   
+### conservation-v1
 
-```{r}
-shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(4, 'desc')))
-```   
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v1')
+```
+
+
+### conservation-v2
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
+```
+
+
+### conservation-v3
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
+```
+
+
+### conservation-v4
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v4')
+```
+
+
+### conservation-v5
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
+```
+
+
+### conservation-v6
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
+```
+
+
+### conservation-v7
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
+```
+
+
