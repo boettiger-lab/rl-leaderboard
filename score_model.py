@@ -21,6 +21,18 @@ MODEL = {"PPO": PPO,
          "TD3": TD3,
          "DQN": DQN}
 
+def import_gym(env_name):
+    if "fishing" in env_name:
+        import gym_fishing
+    elif "ays" in env_name or "dice" in env_name:
+        import gym_climate
+    elif "wildfire" in env_name:
+        import gym_wildfire
+    elif "conservation" in env_name:
+        import gym_conservation
+    elif "sir" in env_name:
+        import gym_epidemic
+
 
 def main():  # noqa: C901
     parser = argparse.ArgumentParser()
@@ -48,18 +60,6 @@ def main():  # noqa: C901
                 hashid = filehash(model_name), 
                 file = "leaderboard.csv")
     
-    
-def import_gym(env_name):
-    if "fishing" in env_name:
-        import gym_fishing
-    elif "ays" in env_name or "dice" in env_name:
-        import gym_climate
-    elif "wildfire" in env_name:
-        import gym_wildfire
-    elif "conservation" in env_name:
-        import gym_conservation
-    elif "sir" in env_name:
-        import gym_epidemic
 
 if __name__ == "__main__":
     main()
