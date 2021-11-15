@@ -14,6 +14,6 @@ def github_hash_url(script):
     if len(repo.index.diff("HEAD")) > 0:
         repo.git.commit("-m 'robot commit before running script'")
     sha = repo.commit().hexsha
-    url = repo.git.remote("get-url", "origin") + "/blob/" + sha + "/" + path
+    url = repo.git.remote("get-url", "origin")[:-4] + "/blob/" + sha + "/" + path
     return url
 
