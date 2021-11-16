@@ -51,7 +51,7 @@ within some planetary boundaries.
 
 ### dice-v0
 
-This environment implements the  model first described in [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf) that phenomenologically models emissions, economic output and growth of renewable energy.
+This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published model.
 
 **Observation Space** 
 
