@@ -32,11 +32,20 @@ Column {.tabset}
 
 ### Home
 
-Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Wildfire Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
+Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the [Wildfire Gym](https://github.com/boettiger-lab/gym_wildfire). The right side-panel hosts the leaderboard where submitted agents are evaluated.
 
 
 ### wildfireCA-v0
 
+This environment is based on a wildfire cellular automata model from [Alexandridis et al.](https://www.sciencedirect.com/science/article/abs/pii/S0096300308004943) 
+
+**Observation Space** The problem according to default settings is a 36 x 36 grid wherein each cell can be in one of four states: no fuel, unburned fuel, ignited or burned. The agent observes a vector that gives the state of each grid cell.  
+
+**Model Dynamics** The dynamics here are quite simple: if one cell is ignited, then there will be some probability that a neighboring cell ignite at the next time step. By default, there is some wind in this environment so there is a directional bias for ignition probability.
+
+**Action Space** By default, the agent is allowed to do 8 preventative burns per evolution time step. A preventative burn turns an unburned active fuel cell into a burned cell. 
+
+**Reward Function** The agent is penalized by the amount of actively burning grid cells at each evolution time step. 
 
 
 Column {.tabset}

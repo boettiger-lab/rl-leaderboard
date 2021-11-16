@@ -36,9 +36,23 @@ Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-pan
 
 ### sir-v0
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### sir_multi-v0
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 Column {.tabset}
 -------------------------------------
