@@ -6,13 +6,16 @@ output:
     theme: 
       bootswatch: cosmo
       
-    source_code: "https://github.com/eco4cast/neon4cast-dashboard"
     navbar:
     - { title: "Fishing", href: "fishing.html", target: "_blank"}
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
     - { title: "Climate", href: "climate.html", target: "_blank"}
     - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
     - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
+    - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
+        target: "_blank"}
 ---
 ```{r, include=FALSE}
 library(dplyr)
@@ -23,6 +26,16 @@ source("utils.R")
 
 wildfire_leaderboard <- select_gym_leaderboard("Gym Wildfire")
 ```   
+
+Column {.tabset}
+-------------------------------------
+
+### Home
+
+Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Wildfire Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
+
+
+### wildfireCA-v0
 
 
 

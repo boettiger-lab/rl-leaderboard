@@ -6,13 +6,16 @@ output:
     theme: 
       bootswatch: cosmo
       
-    source_code: "https://github.com/boettiger-lab/rl-leaderboard"
     navbar:
     - { title: "Fishing", href: "fishing.html", target: "_blank"}
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
     - { title: "Climate", href: "climate.html", target: "_blank"}
     - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
     - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
+    - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
+        target: "_blank"}
 ---
 ```{r, include=FALSE}
 library(dplyr)
@@ -24,6 +27,49 @@ source("utils.R")
 
 fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 ```
+
+Column {.tabset}
+-------------------------------------
+
+### Home
+
+Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Fishing Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
+
+### fishing-v0
+
+
+### fishing-v1
+
+
+### fishing-v2
+
+
+### fishing-v3
+
+
+### fishing-v4
+
+
+### fishing-v5
+
+
+### fishing-v6
+
+
+### fishing-v7
+
+
+### fishing-v8
+
+
+### fishing-v9
+
+
+### fishing-v10
+
+
+### fishing-v11
+
 
 Column {.tabset}
 -------------------------------------
