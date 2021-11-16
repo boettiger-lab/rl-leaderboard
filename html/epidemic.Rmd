@@ -6,13 +6,15 @@ output:
     theme: 
       bootswatch: cosmo
       
-    source_code: "https://github.com/eco4cast/neon4cast-dashboard"
+    source_code: "https://github.com/boettiger-lab/rl-leaderboard"
     navbar:
     - { title: "Fishing", href: "fishing.html", target: "_blank"}
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
     - { title: "Climate", href: "climate.html", target: "_blank"}
     - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
     - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
 ---
 ```{r, include=FALSE}
 library(dplyr)
