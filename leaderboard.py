@@ -12,7 +12,6 @@ def filehash(filename):
 
 def leaderboard(agent, env, team, mean, std, hash_url, file = "leaderboard.csv"):
     
-    ## FIXME only add score if hashid (or hashid+env) is not already found? 
     row_contents = {"agent": agent,
                     "env": env,
                     "team": team,

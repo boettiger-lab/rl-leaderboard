@@ -34,13 +34,32 @@ Column {.tabset}
 
 ### Home
 
-Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Climate Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
+Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the [Climate Gym](https://github.com/boettiger-lab/gym_climate). The right side-panel hosts the leaderboard where submitted agents are evaluated.
 
 ### ays-v0
 
+This environment implements the AYS model first described in [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf) that phenomenologically models emissions, economic output and growth of renewable energy. This environment follows the implementation that [Strnad et al.](https://aip.scitation.org/doi/pdf/10.1063/1.5124673) used to put the AYS model into a OpenAI gym environment.
+
+**Observation Space** The agent observes the variables A, Y and S. A is the excess atmospheric carbon stock. Y is economic output. S is the renewable energy knowledge stock variable. 
+
+**Model Dynamics** The model is a system of ODE's which are described on p. 15 of [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf)  
+
+**Action Space** The agent has 4 available actions: do nothing, lower economic growth, levy a fossil fuel tax or both lower economic growth and levy a fossil fuel tax.
+
+**Reward Function** The agent is given a constant reward if it keeps the system
+within some planetary boundaries.
 
 ### dice-v0
 
+This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published model.
+
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 Column {.tabset}
 -------------------------------------

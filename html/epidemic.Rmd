@@ -32,13 +32,31 @@ Column {.tabset}
 
 ### Home
 
-Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Epidemic Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
+Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the [Epidemic Gym](https://github.com/boettiger-lab/gym_epidemic). The right side-panel hosts the leaderboard where submitted agents are evaluated.
 
 ### sir-v0
 
+This environment implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention). Note that this is not a sequential decision problem, as each episode only lasts 1 time step. This is instead a bandit problem.
+
+**Observation Space** The agent observes the number of susceptible and infectious people along with the basic reproduction number of the system.
+
+**Model Dynamics** The model evolves according to the standard SIR compartmental model. More details about this model can be found in [Morris et al.](https://arxiv.org/abs/2004.02209)
+
+**Action Space** The default for this environment is to follow the full suppression intervention, whereby the agent selects the time to enact a strict quarantine lockdown. In the model this equates to reducing the infectivity parameter, beta, to zero for a period of time.
+
+**Reward Function** The agent is incentivized to minimize the peak of the infectious population.
 
 ### sir_multi-v0
 
+This environment implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention) This environment differs from `sir-v0` in that this is a sequential decision problem. The agent decides over the course of an outbreak whether to quarantine or not; the agent does not determine an intervention at the initial time step like in `sir-v0`.
+
+**Observation Space** The agent observes the number of susceptible and infectious people along with the basic reproduction number of the system.
+
+**Model Dynamics** The model evolves according to the standard SIR compartmental model. More details about this model can be found in [Morris et al.](https://arxiv.org/abs/2004.02209)
+
+**Action Space** The default for this environment is to follow the fixed control intervention, whereby the agent selects the strictness of the quarantine. In the model this equates to reducing the infectivity parameter by some number in the range [0, 1). The agent can only reduce infectivity over 8 weeks. 
+
+**Reward Function** The agent is penalized by the max amount of infectious observed over each time step.
 
 Column {.tabset}
 -------------------------------------

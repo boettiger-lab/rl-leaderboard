@@ -37,27 +37,83 @@ Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-pan
 
 ### conservation-v0
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v1
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v2
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v3
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v4
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v5
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v6
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 ### conservation-v7
 
+**Observation Space** 
+
+**Model Dynamics** 
+
+**Action Space**
+
+**Reward Function** 
 
 Column {.tabset}
 -------------------------------------
