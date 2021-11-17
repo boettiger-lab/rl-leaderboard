@@ -11,7 +11,7 @@ output:
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
     - { title: "Climate", href: "climate.html", target: "_blank"}
     - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
-    - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemic.html", target: "_blank"}
     - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
         target: "_blank", icon: "fa fa-paper-plane"}
     - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
@@ -37,83 +37,77 @@ Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-pan
 
 ### conservation-v0
 
-**Observation Space** 
+This environment considers a single species conservation problem in which the agent can increase the population at a cost.
 
-**Model Dynamics** 
+**Observation Space** The agent observes the population at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a Ricker model.
 
-**Reward Function** 
+**Action Space** The agent determines how much to increment the population. 
 
-### conservation-v1
+**Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
-**Observation Space** 
-
-**Model Dynamics** 
-
-**Action Space**
-
-**Reward Function** 
 
 ### conservation-v2
 
-**Observation Space** 
+This environment considers a single species conservation problem in which the agent can increase the population at a cost.
 
-**Model Dynamics** 
+**Observation Space** The agent observes the population at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a May model.
 
-**Reward Function** 
+**Action Space** The agent determines how much to increment the population. 
+
+**Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
+
 
 ### conservation-v3
 
-**Observation Space** 
+This environment considers a single species conservation problem that has a non-stationary model. 
 
-**Model Dynamics** 
+**Observation Space** The agent observes the population at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a May model in which a parameter, $a$, continually changes, making it more likely for the population to collapse.
 
-**Reward Function** 
+**Action Space** The agent determines how much to increment the population.
 
-### conservation-v4
-
-**Observation Space** 
-
-**Model Dynamics** 
-
-**Action Space**
-
-**Reward Function** 
+**Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 ### conservation-v5
 
-**Observation Space** 
+This environment considers a single species conservation problem that has a non-stationary model. 
 
-**Model Dynamics** 
+**Observation Space** The agent observes the population at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a May model in which a parameter, $a$, continually changes, making it more likely for the population to collapse.
 
-**Reward Function** 
+**Action Space** The agent determines how much to decrease the parameter $a$ and move the system away from the tipping point.
+
+**Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 ### conservation-v6
 
-**Observation Space** 
+This environment considers a single species conservation problem that has a non-stationary model. 
 
-**Model Dynamics** 
+**Observation Space** The agent observes the population at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a May model in which a parameter, $a$, continually changes, making it more likely for the population to collapse. There is some stochasticity in this model, differentiating it from `conservation-v5`.
 
-**Reward Function** 
+**Action Space** The agent determines how much to decrease the parameter $a$ and move the system away from the tipping point.
+
+**Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 ### conservation-v7
 
-**Observation Space** 
+This environment considers a conservation problem that has a non-stationary model. It is similar to `conservation-v5` but works on an ensemble of populations. By default, the replicate number is 1, so the default is equivalent to `conservation-v5`
 
-**Model Dynamics** 
+**Observation Space** The agent observes the populations at that time step.
 
-**Action Space**
+**Model Dynamics** Dynamics follow a May model in which a parameter, $a$, continually changes, making it more likely for the populations to collapse.
 
-**Reward Function** 
+**Action Space** The agent determines how much to decrease the parameter $a$ and move the systems away from their tipping points.
+
+**Reward Function** The agent is rewarded proportionally to the mean population level and penalized according to the magnitude of the action.
 
 Column {.tabset}
 -------------------------------------
@@ -122,13 +116,6 @@ Column {.tabset}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
-```
-
-
-### conservation-v1
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v1')
 ```
 
 
@@ -145,12 +132,6 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
 display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
 ```
 
-
-### conservation-v4
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v4')
-```
 
 
 ### conservation-v5
