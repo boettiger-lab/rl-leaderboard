@@ -164,7 +164,7 @@ This environment implements a fishery where the transition dynamics vary each ep
 
 **Model Dynamics** Transition dynamics can follow May, Ricker, Allen, Beverton-Holt or Myers growth models. The dynamics model is randomly chosen every episode.
 
-**Action Space** Dynamics follow the Ricker growth model.
+**Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
@@ -189,7 +189,6 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v1')
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
 ``` 
-
 
 
 ### fishing-v4 
