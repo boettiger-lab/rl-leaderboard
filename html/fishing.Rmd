@@ -11,7 +11,7 @@ output:
     - { title: "Conservation", href: "conservation.html", target: "_blank"}
     - { title: "Climate", href: "climate.html", target: "_blank"}
     - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
-    - { title: "Epidemics", href: "epidemics.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemic.html", target: "_blank"}
     - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
         target: "_blank", icon: "fa fa-paper-plane"}
     - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
@@ -138,7 +138,7 @@ This environment implements a single species Ricker model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow the Ricker growth model.
+**Model Dynamics** Dynamics follow the Ricker model.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
