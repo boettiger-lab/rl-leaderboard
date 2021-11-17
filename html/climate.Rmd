@@ -51,15 +51,15 @@ within some planetary boundaries.
 
 ### dice-v0
 
-This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published model.
+This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published DICE model.
 
-**Observation Space** 
+**Observation Space** The agent observes 29 continuous valued variables that describe various economic and geophysical properties.
 
-**Model Dynamics** 
+**Model Dynamics** Dynamics follow the DICE model -- see the [user guide.](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) 
 
-**Action Space**
+**Action Space** The agent controls 2 continuous valued variables: $\mu$, the emissions reduction rate, and $S$, which is the savings rate. 
 
-**Reward Function** 
+**Reward Function** The reward function is intricate. Details are given in the user guide, but generally, the agent is rewarded for improving social welfare.
 
 Column {.tabset}
 -------------------------------------
