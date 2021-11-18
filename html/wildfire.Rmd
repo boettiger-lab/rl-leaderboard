@@ -29,7 +29,7 @@ wildfire_leaderboard <- select_gym_leaderboard("Gym Wildfire")
 ```   
 
 
-### wildfireCA-v0
+### wildfireCA-v0 {data-commentary-width=400}
 
 ```{r}
 display_env_leaderboard(wildfire_leaderboard, "wildfireCA-v0")

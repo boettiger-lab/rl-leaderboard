@@ -29,7 +29,7 @@ conservation_leaderboard <- select_gym_leaderboard("Gym Conservation")
 ```   
 
 
-### conservation-v0
+### conservation-v0 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
@@ -48,7 +48,7 @@ This environment considers a single species conservation problem in which the ag
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 
-### conservation-v2
+### conservation-v2 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
@@ -67,7 +67,7 @@ This environment considers a single species conservation problem in which the ag
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 
-### conservation-v3
+### conservation-v3 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
@@ -85,7 +85,7 @@ This environment considers a single species conservation problem that has a non-
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
-### conservation-v5
+### conservation-v5 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
@@ -103,7 +103,7 @@ This environment considers a single species conservation problem that has a non-
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
-### conservation-v6
+### conservation-v6 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
@@ -121,7 +121,7 @@ This environment considers a single species conservation problem that has a non-
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
-### conservation-v7
+### conservation-v7 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
