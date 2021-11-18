@@ -1,0 +1,78 @@
+---
+title: "Conservation Agents Leaderboard"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    storyboard: true
+    theme: 
+      bootswatch: cosmo
+      
+    navbar:
+    - { title: "Fishing", href: "fishing.html", target: "_blank"}
+    - { title: "Conservation", href: "conservation.html", target: "_blank"}
+    - { title: "Climate", href: "climate.html", target: "_blank"}
+    - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemic.html", target: "_blank"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
+    - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
+        target: "_blank"}
+---
+```{r, include=FALSE}
+library(dplyr)
+library(flexdashboard)
+library(DT)
+library(crosstalk)
+library(reticulate)
+source("utils.R")
+
+fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
+```
+
+
+
+Column {.tabset}
+-------------------------------------
+  
+### fishing-v1 
+
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v1')
+``` 
+
+***
+
+
+This environment implements a simple, single species logistic growth-based fishery.
+
+**Observation Space** The agent observes the fish population at that time step.
+
+**Model Dynamics** Dynamics follow a logistic growth model.
+
+**Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
+
+**Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
+
+
+
+### fishing-v2 
+
+
+```{r} 
+display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
+``` 
+
+***
+
+This environment implements a single species logistic growth-based fishery with a tipping point.
+
+**Observation Space** The agent observes the fish population at that time step.
+
+**Model Dynamics** Dynamics follow a logistic growth model but below a population of 0.5K the population becomes much more likely to crash.
+
+**Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
+
+**Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
+
+
