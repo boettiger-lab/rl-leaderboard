@@ -38,7 +38,7 @@ display_env_leaderboard(climate_leaderboard, "ays-v0")
 
 ***
 
-This environment implements the AYS model first described in [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf) that phenomenologically models emissions, economic output and growth of renewable energy. This environment follows the implementation that [Strnad et al.](https://aip.scitation.org/doi/pdf/10.1063/1.5124673) used to put the AYS model into a OpenAI gym environment.
+ays-v0 implements the AYS model first described in [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf) that phenomenologically models emissions, economic output and growth of renewable energy. This environment follows the implementation that [Strnad et al.](https://aip.scitation.org/doi/pdf/10.1063/1.5124673) used to put the AYS model into a OpenAI gym environment.
 
 **Observation Space** The agent observes the variables A, Y and S. A is the excess atmospheric carbon stock. Y is economic output. S is the renewable energy knowledge stock variable. 
 
@@ -59,7 +59,7 @@ display_env_leaderboard(climate_leaderboard, "dice-v0")
 
 *** 
 
-This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published DICE model.
+dice-v0 implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published DICE model.
 
 **Observation Space** The agent observes 29 continuous valued variables that describe various economic and geophysical properties.
 

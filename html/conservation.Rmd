@@ -37,7 +37,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
 
 ***
 
-This environment considers a single species conservation problem in which the agent can increase the population at a cost.
+conservation-v0 considers a single species conservation problem in which the agent can increase the population at a cost.
 
 **Observation Space** The agent observes the population at that time step.
 
@@ -56,7 +56,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
 
 ***
 
-This environment considers a single species conservation problem in which the agent can increase the population at a cost.
+conservation-v2 considers a single species conservation problem in which the agent can increase the population at a cost.
 
 **Observation Space** The agent observes the population at that time step.
 
@@ -75,7 +75,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
 
 ***
 
-This environment considers a single species conservation problem that has a non-stationary model. 
+conservation-v3 considers a single species conservation problem that has a non-stationary model. 
 
 **Observation Space** The agent observes the population at that time step.
 
@@ -93,7 +93,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
 
 ***
 
-This environment considers a single species conservation problem that has a non-stationary model. 
+conservation-v5 considers a single species conservation problem that has a non-stationary model. 
 
 **Observation Space** The agent observes the population at that time step.
 
@@ -111,7 +111,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
 
 ***
 
-This environment considers a single species conservation problem that has a non-stationary model. 
+conservation-v6 considers a single species conservation problem that has a non-stationary model. 
 
 **Observation Space** The agent observes the population at that time step.
 
@@ -129,7 +129,7 @@ display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
 
 ***
 
-This environment considers a conservation problem that has a non-stationary model. It is similar to `conservation-v5` but works on an ensemble of populations. By default, the replicate number is 1, so the default is equivalent to `conservation-v5`
+conservation-v7 considers a conservation problem that has a non-stationary model. It is similar to conservation-v5 but works on an ensemble of populations. By default, the replicate number is 1, so the default is equivalent to conservation-v5.
 
 **Observation Space** The agent observes the populations at that time step.
 

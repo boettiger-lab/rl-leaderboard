@@ -37,7 +37,7 @@ display_env_leaderboard(epidemic_leaderboard, "sir-v0")
 
 ***
 
-This environment implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention). Note that this is not a sequential decision problem, as each episode only lasts 1 time step. This is instead a bandit problem.
+sir-v0 implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention). Note that this is not a sequential decision problem, as each episode only lasts 1 time step. This is instead a bandit problem.
 
 **Observation Space** The agent observes the number of susceptible and infectious people along with the basic reproduction number of the system.
 
@@ -55,7 +55,7 @@ display_env_leaderboard(epidemic_leaderboard, "sir_multi-v0")
 
 ***
 
-This environment implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention) This environment differs from `sir-v0` in that this is a sequential decision problem. The agent decides over the course of an outbreak whether to quarantine or not; the agent does not determine an intervention at the initial time step like in `sir-v0`.
+sir_multi-v0 implements a compartmental SIR epidemic model and is closely based off of the implementation from [Morris et al.](https://github.com/dylanhmorris/optimal-sir-intervention) This environment differs from `sir-v0` in that this is a sequential decision problem. The agent decides over the course of an outbreak whether to quarantine or not; the agent does not determine an intervention at the initial time step like in `sir-v0`.
 
 **Observation Space** The agent observes the number of susceptible and infectious people along with the basic reproduction number of the system.
 
