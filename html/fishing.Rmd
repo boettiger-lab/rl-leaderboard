@@ -116,7 +116,7 @@ This environment implements a single species Allen model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow the Allen growth model.
+**Model Dynamics** Dynamics follow the Allen model.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
@@ -135,7 +135,7 @@ This environment implements a single species Beverton-Holt model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow the Beverton-Holt growth model.
+**Model Dynamics** Dynamics follow the Beverton-Holt model.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
@@ -153,7 +153,7 @@ This environment implements a single species May model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow the May growth model.
+**Model Dynamics** Dynamics follow the May model.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
@@ -171,7 +171,7 @@ This environment implements a single species Myers model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow the Myers growth model.
+**Model Dynamics** Dynamics follow the Myers model.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
@@ -207,7 +207,7 @@ This environment implements a single species non-stationary Beverton-Holt model-
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Dynamics follow a Beverton-Holt growth model where `r` changes constantly over an episode by some amount, `alpha`.
+**Model Dynamics** Dynamics follow a Beverton-Holt model where `r` changes constantly over an episode by some amount, `alpha`.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
@@ -225,7 +225,7 @@ This environment implements a fishery where the transition dynamics vary each ep
 
 **Observation Space** The agent observes the fish population at that time step.
 
-**Model Dynamics** Transition dynamics can follow May, Ricker, Allen, Beverton-Holt or Myers growth models. The dynamics model is randomly chosen every episode.
+**Model Dynamics** Transition dynamics can follow May, Ricker, Allen, Beverton-Holt or Myers population models. The dynamics model is randomly chosen every episode.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
