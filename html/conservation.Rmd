@@ -3,6 +3,7 @@ title: "Conservation Agents Leaderboard"
 output:
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
+    storyboard: true
     theme: 
       bootswatch: cosmo
       
@@ -28,14 +29,13 @@ conservation_leaderboard <- select_gym_leaderboard("Gym Conservation")
 ```   
 
 
-Column {.tabset}
--------------------------------------
-   
-### Home
-
-Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the Conservation Gym. The right side-panel hosts the leaderboard where submitted agents are evaluated.
-
 ### conservation-v0
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
+```
+
+***
 
 This environment considers a single species conservation problem in which the agent can increase the population at a cost.
 
@@ -50,6 +50,12 @@ This environment considers a single species conservation problem in which the ag
 
 ### conservation-v2
 
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
+```
+
+***
+
 This environment considers a single species conservation problem in which the agent can increase the population at a cost.
 
 **Observation Space** The agent observes the population at that time step.
@@ -63,6 +69,12 @@ This environment considers a single species conservation problem in which the ag
 
 ### conservation-v3
 
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
+```
+
+***
+
 This environment considers a single species conservation problem that has a non-stationary model. 
 
 **Observation Space** The agent observes the population at that time step.
@@ -75,6 +87,12 @@ This environment considers a single species conservation problem that has a non-
 
 ### conservation-v5
 
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
+```
+
+***
+
 This environment considers a single species conservation problem that has a non-stationary model. 
 
 **Observation Space** The agent observes the population at that time step.
@@ -86,6 +104,12 @@ This environment considers a single species conservation problem that has a non-
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
 ### conservation-v6
+
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
+```
+
+***
 
 This environment considers a single species conservation problem that has a non-stationary model. 
 
@@ -99,6 +123,12 @@ This environment considers a single species conservation problem that has a non-
 
 ### conservation-v7
 
+```{r} 
+display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
+```
+
+***
+
 This environment considers a conservation problem that has a non-stationary model. It is similar to `conservation-v5` but works on an ensemble of populations. By default, the replicate number is 1, so the default is equivalent to `conservation-v5`
 
 **Observation Space** The agent observes the populations at that time step.
@@ -108,50 +138,3 @@ This environment considers a conservation problem that has a non-stationary mode
 **Action Space** The agent determines how much to decrease the parameter $a$ and move the systems away from their tipping points.
 
 **Reward Function** The agent is rewarded proportionally to the mean population level and penalized according to the magnitude of the action.
-
-Column {.tabset}
--------------------------------------
-   
-### conservation-v0
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
-```
-
-
-### conservation-v2
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
-```
-
-
-### conservation-v3
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v3')
-```
-
-
-
-### conservation-v5
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
-```
-
-
-### conservation-v6
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
-```
-
-
-### conservation-v7
-
-```{r} 
-display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
-```
-
-

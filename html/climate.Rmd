@@ -3,6 +3,7 @@ title: "Conservation Agents Leaderboard"
 output:
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
+    storyboard: true
     theme: 
       bootswatch: cosmo
     
@@ -29,14 +30,13 @@ climate_leaderboard <- select_gym_leaderboard("Gym Climate")
 ```
 
 
-Column {.tabset}
--------------------------------------
-
-### Home
-
-Welcome to the Conservation Agents Leaderboard.<br /><br />On this left side-panel, context is provided for the environments from the [Climate Gym](https://github.com/boettiger-lab/gym_climate). The right side-panel hosts the leaderboard where submitted agents are evaluated.
-
 ### ays-v0
+
+```{r}
+display_env_leaderboard(climate_leaderboard, "ays-v0")
+```
+
+***
 
 This environment implements the AYS model first described in [Kittel et al.](https://arxiv.org/pdf/1706.04542.pdf) that phenomenologically models emissions, economic output and growth of renewable energy. This environment follows the implementation that [Strnad et al.](https://aip.scitation.org/doi/pdf/10.1063/1.5124673) used to put the AYS model into a OpenAI gym environment.
 
@@ -49,7 +49,15 @@ This environment implements the AYS model first described in [Kittel et al.](htt
 **Reward Function** The agent is given a constant reward if it keeps the system
 within some planetary boundaries.
 
+
+
 ### dice-v0
+
+```{r}
+display_env_leaderboard(climate_leaderboard, "dice-v0")
+```
+
+*** 
 
 This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/homepage/homepage/documents/DICE_Manual_100413r1.pdf) which is a richly detailed integrated assessment model. This implementation closely follows the [pyDICE model](https://github.com/hazem2410/PyDICE/blob/master/DICE2016.py), which is a python version of the originally published DICE model.
 
@@ -60,19 +68,3 @@ This environment implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nor
 **Action Space** The agent controls 2 continuous valued variables: $\mu$, the emissions reduction rate, and $S$, which is the savings rate. 
 
 **Reward Function** The reward function is intricate. Details are given in the user guide, but generally, the agent is rewarded for improving social welfare.
-
-Column {.tabset}
--------------------------------------
-   
-### ays-v0
-
-```{r}
-display_env_leaderboard(climate_leaderboard, "ays-v0")
-```
-
-
-### dice-v0
-
-```{r}
-display_env_leaderboard(climate_leaderboard, "dice-v0")
-```

@@ -29,10 +29,6 @@ source("utils.R")
 fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 ```
 
-
-
-Column {.tabset}
--------------------------------------
   
 ### fishing-v1 
 
