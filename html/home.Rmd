@@ -1,0 +1,38 @@
+---
+title: "Conservation Agents Leaderboard"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: 
+      bootswatch: cosmo
+      
+    navbar:
+    - { title: "Fishing", href: "fishing.html", target: "_blank"}
+    - { title: "Conservation", href: "conservation.html", target: "_blank"}
+    - { title: "Climate", href: "climate.html", target: "_blank"}
+    - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
+    - { title: "Epidemics", href: "epidemic.html", target: "_blank"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
+    - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
+        target: "_blank"}
+---
+```{r, include=FALSE}
+library(dplyr)
+library(flexdashboard)
+library(DT)
+library(crosstalk)
+library(reticulate)
+source("utils.R")
+
+fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
+```
+
+
+Welcome to the Conservation Agents leaderboard, where submissions to conservation-based RL environments are evaluated. <br/>
+
+Clicking on Fishing, Conservation, Climate, Wildlife or Epidemics in the navigation bar will bring up the corresponding leaderboard. For each environment, the submissions are ranked according to a performance metric. Some context is also provided on the environment. <br/>
+
+To make a submission to the leaderboard, click on the Submit Agent tab, which will provide instructions from there. 
+
+
