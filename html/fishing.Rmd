@@ -30,7 +30,7 @@ fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 ```
 
 
-### fishing-v0
+### fishing-v0 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v0')
@@ -38,7 +38,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v0')
 
 ***
 
-This environment implements a simple, single species logistic growth-based fishery.
+fishing-v0 implements a simple, single species logistic growth-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -48,7 +48,7 @@ This environment implements a simple, single species logistic growth-based fishe
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
-### fishing-v1
+### fishing-v1 {data-commentary-width=400}
 
 
 ```{r} 
@@ -57,7 +57,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v1')
 
 ***
 
-This environment implements a simple, single species logistic growth-based fishery.
+fishing-v1 implements a simple, single species logistic growth-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -67,7 +67,7 @@ This environment implements a simple, single species logistic growth-based fishe
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
-### fishing-v2
+### fishing-v2 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
@@ -75,7 +75,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
 
 ***
 
-This environment implements a single species logistic growth-based fishery with a tipping point.
+fishing-v2 implements a single species logistic growth-based fishery with a tipping point.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -86,7 +86,7 @@ This environment implements a single species logistic growth-based fishery with 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
 
-### fishing-v4
+### fishing-v4 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v4')
@@ -94,7 +94,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v4')
 
 ***
 
-This environment implements a single species logistic growth-based fishery with model error.
+fishing-v4 implements a single species logistic growth-based fishery with model error.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -104,7 +104,7 @@ This environment implements a single species logistic growth-based fishery with 
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
-### fishing-v5
+### fishing-v5 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v5')
@@ -112,7 +112,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v5')
 
 ***
 
-This environment implements a single species Allen model-based fishery.
+fishing-v5 implements a single species Allen model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -122,7 +122,7 @@ This environment implements a single species Allen model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
-### fishing-v6
+### fishing-v6 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v6')
@@ -131,7 +131,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v6')
 
 ***
 
-This environment implements a single species Beverton-Holt model-based fishery.
+fishing-v6 implements a single species Beverton-Holt model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -141,7 +141,7 @@ This environment implements a single species Beverton-Holt model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
-### fishing-v7
+### fishing-v7 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v7')
@@ -149,7 +149,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v7')
 
 ***
 
-This environment implements a single species May model-based fishery.
+fishing-v7 implements a single species May model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -159,7 +159,7 @@ This environment implements a single species May model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
-### fishing-v8
+### fishing-v8 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v8')
@@ -167,7 +167,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v8')
 
 ***
 
-This environment implements a single species Myers model-based fishery.
+fishing-v8 implements a single species Myers model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -177,7 +177,7 @@ This environment implements a single species Myers model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
-### fishing-v9
+### fishing-v9 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v9')
@@ -185,7 +185,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v9')
 
 ***
 
-This environment implements a single species Ricker model-based fishery.
+fishing-v9 implements a single species Ricker model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -195,7 +195,7 @@ This environment implements a single species Ricker model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
-### fishing-v10
+### fishing-v10 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v10')
@@ -203,7 +203,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v10')
 
 ***
 
-This environment implements a single species non-stationary Beverton-Holt model-based fishery.
+fishing-v10 implements a single species non-stationary Beverton-Holt model-based fishery.
 
 **Observation Space** The agent observes the fish population at that time step.
 
@@ -213,7 +213,7 @@ This environment implements a single species non-stationary Beverton-Holt model-
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
-### fishing-v11
+### fishing-v11 {data-commentary-width=400}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v11')
@@ -221,7 +221,7 @@ display_env_leaderboard(fishing_leaderboard, 'fishing-v11')
 
 ***
 
-This environment implements a fishery where the transition dynamics vary each episode.
+fishing-v11 implements a fishery where the transition dynamics vary each episode.
 
 **Observation Space** The agent observes the fish population at that time step.
 

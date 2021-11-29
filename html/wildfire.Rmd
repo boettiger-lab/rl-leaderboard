@@ -29,7 +29,7 @@ wildfire_leaderboard <- select_gym_leaderboard("Gym Wildfire")
 ```   
 
 
-### wildfireCA-v0
+### wildfireCA-v0 {data-commentary-width=400}
 
 ```{r}
 display_env_leaderboard(wildfire_leaderboard, "wildfireCA-v0")
@@ -37,7 +37,7 @@ display_env_leaderboard(wildfire_leaderboard, "wildfireCA-v0")
 
 ***
 
-This environment is based on a wildfire cellular automata model from [Alexandridis et al.](https://www.sciencedirect.com/science/article/abs/pii/S0096300308004943) 
+wildfireCA-v0 is based on a wildfire cellular automata model from [Alexandridis et al.](https://www.sciencedirect.com/science/article/abs/pii/S0096300308004943) 
 
 **Observation Space** The problem according to default settings is a 36 x 36 grid wherein each cell can be in one of four states: no fuel, unburned fuel, ignited or burned. The agent observes a vector that gives the state of each grid cell.  
 
