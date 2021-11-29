@@ -8,11 +8,11 @@ output:
       bootswatch: cosmo
       
     navbar:
-    - { title: "Fishing", href: "fishing.html", target: "_blank"}
-    - { title: "Conservation", href: "conservation.html", target: "_blank"}
-    - { title: "Climate", href: "climate.html", target: "_blank"}
-    - { title: "Wildfire", href: "wildfire.html", target: "_blank"}
-    - { title: "Epidemics", href: "epidemic.html", target: "_blank"}
+    - { title: "Fishing", href: "fishing.html"}
+    - { title: "Conservation", href: "conservation.html"}
+    - { title: "Climate", href: "climate.html"}
+    - { title: "Wildfire", href: "wildfire.html"}
+    - { title: "Epidemics", href: "epidemic.html"}
     - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
         target: "_blank", icon: "fa fa-paper-plane"}
     - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
