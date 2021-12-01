@@ -35,7 +35,7 @@ def import_gym(env_name):
     elif "sir" in env_name:
         import gym_epidemic
 
-def score_model(env_name, agent_name, model_name, team, hash_url):
+def score_model(env_name, agent_name, model_name, team, hash_url, hash_file):
     import_gym(env_name)
     env = Monitor(gym.make(env_name))
     agent = MODEL[agent_name]
@@ -47,6 +47,7 @@ def score_model(env_name, agent_name, model_name, team, hash_url):
                 mean = score[0], 
                 std = score[1],
                 hash_url = hash_url,
+                hash_file = hash_file,
                 file = "leaderboard.csv")
 
 
@@ -62,14 +63,13 @@ def main():  # noqa: C901
     agent_name = parsed.group(2)
     team = parsed.group(3)
     hash_url = github_hash_url(model_name)
+    hash_file = filehash(model_name)
     if os.path.exists("leaderboard.csv"):
         leaderboard = pd.read_csv("leaderboard.csv")
-        if hash_url in leaderboard['hash_url'].values:
-            pass
-        else:
-            score_model(env_name, agent_name, model_name, team, hash_url)
+        if hash_file not in leaderboard['hash_file'].values:
+            score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
     else:
-        score_model(env_name, agent_name, model_name, team, hash_url)
+        score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
 
 
 if __name__ == "__main__":
