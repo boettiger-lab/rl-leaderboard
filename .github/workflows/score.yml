@@ -15,6 +15,7 @@ name: score
 jobs:
   build:
     # Skip CI if [ci skip] in the commit message
+    # Need to figure out json secrets for read_sheets.py
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-latest
     env:
@@ -29,9 +30,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install dependencies and config file
       run: |
         pip install -r requirements.txt
+        echo "$SHEET_KEY" > config.json
+      env:
+        SHEET_KEY: ${{secrets.SHEET_KEY}}
     - name: score
       run: |
         ./run.sh
