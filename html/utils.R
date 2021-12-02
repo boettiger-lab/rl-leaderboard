@@ -19,7 +19,7 @@ convert_col <- function(column) {
 }
 
 select_gym_leaderboard <- function(gym_name) {
-  leaderboard <- read.csv("../leaderboard.csv") %>% select(-c(date))
+  leaderboard <- read.csv("../leaderboard.csv") %>% select(-c(date, hash_file))
   leaderboard$gym <- mapply(convert_col, leaderboard$env)
   selected_leaderboard <- leaderboard %>% filter(gym == gym_name) %>% head() %>% select(-gym)
   return(selected_leaderboard)

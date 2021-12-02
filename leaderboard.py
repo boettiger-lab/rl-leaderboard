@@ -10,7 +10,7 @@ def filehash(filename):
     readable_hash = hashlib.sha256(bytes).hexdigest();
     return readable_hash
 
-def leaderboard(agent, env, team, mean, std, hash_url, file = "leaderboard.csv"):
+def leaderboard(agent, env, team, mean, std, hash_url, hash_file, file = "leaderboard.csv"):
     
     row_contents = {"agent": agent,
                     "env": env,
@@ -18,6 +18,7 @@ def leaderboard(agent, env, team, mean, std, hash_url, file = "leaderboard.csv")
                     "mean": mean, 
                     "std": std,
                     "hash_url": hash_url,
+                    "hash_file": hash_file,
                     "date": datetime.now()}
     has_header = os.path.exists(file)                
     with open(file, 'a+') as stream:
@@ -28,10 +29,9 @@ def leaderboard(agent, env, team, mean, std, hash_url, file = "leaderboard.csv")
                                               "mean", 
                                               "std",
                                               "hash_url",
+                                              "hash_file",
                                               "date"])
         if(not has_header):                                      
             writer.writeheader()
         writer.writerow(row_contents)
 
-
-# leaderboard("X", "B", 3, 0, "leaderboard.py", "test.csv")
