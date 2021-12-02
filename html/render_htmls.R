@@ -1,3 +1,4 @@
+rmarkdown::render("home.Rmd", envir = globalenv())
 rmarkdown::render("fishing.Rmd", envir = globalenv())
 rmarkdown::render("climate.Rmd", envir = globalenv())
 rmarkdown::render("epidemic.Rmd", envir = globalenv())
