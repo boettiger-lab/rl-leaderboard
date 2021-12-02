@@ -8,7 +8,7 @@ while read p; do
   git clone $p
   # This slices the directory name from the repo url
   dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
-  mv $dir_name models/
+  mv -f $dir_name models/
   # Creating virtual env to install requirements
   python3 -m venv .virtualenv/$dir_name
   source .virtualenv/$dir_name/bin/activate
