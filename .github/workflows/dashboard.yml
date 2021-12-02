@@ -26,6 +26,7 @@ jobs:
         run: |
           Rscript -e "install.packages('remotes')"
           Rscript -e "install.packages('DT')"
+          Rscript -e "install.packages('reticulate')"
           Rscript -e "remotes::install_deps()"
       - name: Render
         shell: Rscript {0}
