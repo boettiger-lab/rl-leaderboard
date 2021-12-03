@@ -15,7 +15,6 @@ name: score
 jobs:
   build:
     # Skip CI if [ci skip] in the commit message
-    # Need to figure out json secrets for read_sheets.py
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-latest
     env:

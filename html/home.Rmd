@@ -30,7 +30,7 @@ fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 
 Welcome to the Conservation Agents leaderboard, where submissions to conservation-based RL environments are evaluated. <br/>
 
-Clicking on Fishing, Conservation, Climate, Wildlife or Epidemics in the navigation bar will bring up the corresponding leaderboard. For each environment, the submissions are ranked according to a performance metric. Some context is also provided on the environment. <br/>
+Click on Fishing, Conservation, Climate, Wildlife or Epidemics in the navigation bar to bring up the corresponding leaderboard. For each environment, submissions are ranked according to a performance metric. Context is provided on each environment. <br/>
 
 To make a submission to the leaderboard, click on the Submit Agent tab, which will provide instructions from there. 
 
