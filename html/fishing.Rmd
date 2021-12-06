@@ -48,6 +48,10 @@ fishing-v0 implements a simple, single species logistic growth-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v1 {data-commentary-width=400}
 
 
@@ -67,6 +71,10 @@ fishing-v1 implements a simple, single species logistic growth-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v2 {data-commentary-width=400}
 
 ```{r} 
@@ -84,6 +92,9 @@ fishing-v2 implements a single species logistic growth-based fishery with a tipp
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
+
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
 
 
 ### fishing-v4 {data-commentary-width=400}
@@ -104,6 +115,10 @@ fishing-v4 implements a single species logistic growth-based fishery with model 
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v5 {data-commentary-width=400}
 
 ```{r} 
@@ -121,6 +136,10 @@ fishing-v5 implements a single species Allen model-based fishery.
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
+
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
 
 ### fishing-v6 {data-commentary-width=400}
 
@@ -141,6 +160,10 @@ fishing-v6 implements a single species Beverton-Holt model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v7 {data-commentary-width=400}
 
 ```{r} 
@@ -159,6 +182,10 @@ fishing-v7 implements a single species May model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v8 {data-commentary-width=400}
 
 ```{r} 
@@ -175,7 +202,11 @@ fishing-v8 implements a single species Myers model-based fishery.
 
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
-**Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
+**Reward Function** The agent is rewarded by the amount of fish harvested at a time step.
+
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
 
 ### fishing-v9 {data-commentary-width=400}
 
@@ -195,6 +226,10 @@ fishing-v9 implements a single species Ricker model-based fishery.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v10 {data-commentary-width=400}
 
 ```{r} 
@@ -213,6 +248,10 @@ fishing-v10 implements a single species non-stationary Beverton-Holt model-based
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
 
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
+
 ### fishing-v11 {data-commentary-width=400}
 
 ```{r} 
@@ -230,3 +269,7 @@ fishing-v11 implements a fishery where the transition dynamics vary each episode
 **Action Space** The agent selects a quantity of fish to harvest with respect to K with a continuous interval.
 
 **Reward Function** The agent is rewarded by the amount of fish harvested at a time step. 
+
+---
+[Fishing Gym](https://github.com/boettiger-lab/gym_fishing)
+
