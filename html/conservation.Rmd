@@ -47,6 +47,9 @@ conservation-v0 considers a single species conservation problem in which the age
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
+
 
 ### conservation-v2 {data-commentary-width=400}
 
@@ -65,6 +68,9 @@ conservation-v2 considers a single species conservation problem in which the age
 **Action Space** The agent determines how much to increment the population. 
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
+
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
 
 
 ### conservation-v3 {data-commentary-width=400}
@@ -85,6 +91,10 @@ conservation-v3 considers a single species conservation problem that has a non-s
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
+
+
 ### conservation-v5 {data-commentary-width=400}
 
 ```{r} 
@@ -102,6 +112,10 @@ conservation-v5 considers a single species conservation problem that has a non-s
 **Action Space** The agent determines how much to decrease the parameter $a$ and move the system away from the tipping point.
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
+
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
+
 
 ### conservation-v6 {data-commentary-width=400}
 
@@ -121,6 +135,10 @@ conservation-v6 considers a single species conservation problem that has a non-s
 
 **Reward Function** The agent is rewarded proportionally to the population level and penalized according to the magnitude of the action.
 
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
+
+
 ### conservation-v7 {data-commentary-width=400}
 
 ```{r} 
@@ -138,3 +156,7 @@ conservation-v7 considers a conservation problem that has a non-stationary model
 **Action Space** The agent determines how much to decrease the parameter $a$ and move the systems away from their tipping points.
 
 **Reward Function** The agent is rewarded proportionally to the mean population level and penalized according to the magnitude of the action.
+
+---
+[Conservation Gym](https://github.com/boettiger-lab/gym_conservation)
+

@@ -47,6 +47,10 @@ sir-v0 implements a compartmental SIR epidemic model and is closely based off of
 
 **Reward Function** The agent is incentivized to minimize the peak of the infectious population.
 
+---
+[Epidemic Gym](https://github.com/boettiger-lab/gym_epidemic)
+
+
 ### sir_multi-v0 {data-commentary-width=400}
 
 ```{r}
@@ -64,4 +68,8 @@ sir_multi-v0 implements a compartmental SIR epidemic model and is closely based 
 **Action Space** The default for this environment is to follow the fixed control intervention, whereby the agent selects the strictness of the quarantine for the duration of one week. This equates to reducing the infectivity parameter by some number in the range [0, 1). The agent has an intervention budget of 8 weeks. 
 
 **Reward Function** The agent is penalized by the max amount of infectious observed over each time step.
+
+---
+[Epidemic Gym](https://github.com/boettiger-lab/gym_epidemic)
+
 
