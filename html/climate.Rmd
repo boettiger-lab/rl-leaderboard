@@ -47,7 +47,7 @@ ays-v0 implements the AYS model first described in [Kittel et al.](https://arxiv
 **Reward Function** The agent is given a constant reward if it keeps the system
 within some planetary boundaries.
 
----
+<hr>
 [Climate Gym](https://github.com/boettiger-lab/gym_climate)
 
 ### dice-v0
@@ -68,5 +68,5 @@ dice-v0 implements [Nordhaus' DICE model](http://www.econ.yale.edu/~nordhaus/hom
 
 **Reward Function** The reward function is intricate. Details are given in the user guide, but generally, the agent is rewarded for improving social welfare.
 
----
+<hr>
 [Climate Gym](https://github.com/boettiger-lab/gym_climate)
