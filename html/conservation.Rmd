@@ -22,7 +22,6 @@ output:
 library(dplyr)
 library(flexdashboard)
 library(DT)
-library(crosstalk)
 source("utils.R")
 
 conservation_leaderboard <- select_gym_leaderboard("Gym Conservation")
