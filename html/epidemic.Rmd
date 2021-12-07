@@ -46,8 +46,7 @@ sir-v0 implements a compartmental SIR epidemic model and is closely based off of
 
 **Reward Function** The agent is incentivized to minimize the peak of the infectious population.
 
----
-[Epidemic Gym](https://github.com/boettiger-lab/gym_epidemic)
+[Source Code](https://github.com/boettiger-lab/gym_epidemic)
 
 
 ### sir_multi-v0 {data-commentary-width=400}
@@ -68,7 +67,6 @@ sir_multi-v0 implements a compartmental SIR epidemic model and is closely based 
 
 **Reward Function** The agent is penalized by the max amount of infectious observed over each time step.
 
----
-[Epidemic Gym](https://github.com/boettiger-lab/gym_epidemic)
+[Source Code](https://github.com/boettiger-lab/gym_epidemic)
 
 
