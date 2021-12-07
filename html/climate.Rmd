@@ -23,7 +23,6 @@ library(dplyr)
 library(flexdashboard)
 library(DT)
 library(crosstalk)
-library(reticulate)
 source("utils.R")
 
 climate_leaderboard <- select_gym_leaderboard("Gym Climate")
