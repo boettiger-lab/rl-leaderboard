@@ -31,6 +31,5 @@ display_env_leaderboard <- function(gym_leaderboard, env_name) {
                                                   paste0('<a href=', 
                                                   hash_url, '>link </a>' ))
   env_leaderboard <- env_leaderboard %>% select(-hash_url)
-  shared_leaderboard <- SharedData$new(env_leaderboard)
-  shared_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(3, 'desc')), escape=FALSE)
+  env_leaderboard %>% DT::datatable(fillContainer = FALSE, options = list(order=list(3, 'desc')), escape=FALSE)
 }
