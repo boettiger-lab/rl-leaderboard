@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e # Treat errors as errors
+
 pip install -r requirements.txt > /dev/null
 python read_sheets.py
 
