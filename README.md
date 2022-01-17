@@ -1,7 +1,9 @@
 # rl-leaderboard
 Automatically evaluate, score, and visualize submitted RL agents against relevant conservation gyms
 
-How to submit an agent:
+## [Take me to your leader(board)](https://boettiger-lab.github.io/rl-leaderboard/html/fishing)
+
+## How to submit an agent:
 
 1) Make a public github repo ([example](https://github.com/mlap/test-rl-leaderboard1)) that contains:
 	- a .zip of parameters of a SB3-trained agent; naming convention on this .zip is ENV-ALGORITHM-TEAMNAME.zip
