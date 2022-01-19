@@ -6,9 +6,9 @@
 from git import Repo
 import os
 
-def github_hash_url(script):
+def github_hash_url(script, repo_path):
     ## Commit file and compute GitHub URL
-    repo = Repo(".", search_parent_directories=True)
+    repo = Repo(repo_path, search_parent_directories=True)
     path = os.path.relpath(script, repo.git.working_dir)
     repo.git.add(path)
     if len(repo.index.diff("HEAD")) > 0:
