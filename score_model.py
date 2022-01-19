@@ -62,7 +62,7 @@ def main():  # noqa: C901
     env_name = parsed.group(1)
     agent_name = parsed.group(2)
     team = parsed.group(3)
-    hash_url = github_hash_url(model_name)
+    hash_url = github_hash_url(model_name, f"models/{args.dir}")
     hash_file = filehash(model_name)
     if os.path.exists("leaderboard.csv"):
         leaderboard = pd.read_csv("leaderboard.csv")
