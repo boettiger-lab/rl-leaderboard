@@ -2,3 +2,5 @@ numpy
 pandas
 pygsheets
 gitpython
+stable-baselines3
+sb3_contrib
