@@ -13,11 +13,11 @@ while read p; do
   dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
   cd $dir_name
   # Creating virtual env to install requirements
-  ## Consider mechanism to pre-populate virualenv with common packages?
+  ## Consider mechanism to pre-populate virualenv with common packages? Or pip handles this?
   python3 -m venv .virtualenv/$dir_name
   source .virtualenv/$dir_name/bin/activate
+  pip install gitpython sb3_contrib stable-baselines3 # needed for score_model.py
   pip install -r requirements.txt > /dev/null
-  pip install gitpython
   # Scoring model finally
   python ../score_model.py -d "." || echo "Error with score_model.py for $p"
   # Cleaning up
