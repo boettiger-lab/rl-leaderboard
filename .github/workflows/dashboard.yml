@@ -1,11 +1,10 @@
 # Workflow derived from https://github.com/r-lib/actions/tree/master/examples
 # Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
-  schedule:
-    - cron: '0 8 * * *'
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [score]
+    types:
+      - completed
   workflow_dispatch:
 
 name: render-rmarkdown
