@@ -1,2 +1,4 @@
 https://github.com/mlap/test-rl-leaderboard.git
 https://github.com/mlap/test-rl-leaderboard1.git
+https://github.com/cboettig/rl-tipping-points
+https://github.com/Brandons42/rl-leaderboard-output

@@ -1,6 +1,7 @@
 #!/usr/local/python
 
-from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN
+from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+from sb3_contrib import ARS, TRPO, MaskablePPO, QRDQN, TQC
 import gym
 import yaml
 import glob
@@ -21,7 +22,14 @@ MODEL = {"PPO": PPO,
          "SAC": SAC,
          "DDPG": DDPG,
          "TD3": TD3,
-         "DQN": DQN}
+         "DQN": DQN,
+         "HER": HER,
+         "ARS": ARS,
+         "TRPO": TRPO,
+         "TQC": TQC,
+         "MaskablePPO": MaskablePPO,
+         "QRDQN": QRDQN
+        }
 
 def import_gym(env_name):
     if "fishing" in env_name:
@@ -48,28 +56,29 @@ def score_model(env_name, agent_name, model_name, team, hash_url, hash_file):
                 std = score[1],
                 hash_url = hash_url,
                 hash_file = hash_file,
-                file = "leaderboard.csv")
+                file = "../leaderboard.csv")
 
 
+# NOTE: ideally should take a path to leaderboard.csv
 def main():  # noqa: C901
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dir", help="Directory name with model", type=str)
     args = parser.parse_args()
-    model_name = glob.glob(f"models/{args.dir}/*.zip")[0]
+    model_name = glob.glob(f"{args.dir}/*.zip")[0]
     
-    
+    leaderboard_csv = "../leaderboard.csv"
     parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
     env_name = parsed.group(1)
     agent_name = parsed.group(2)
     team = parsed.group(3)
-    hash_url = github_hash_url(model_name, f"models/{args.dir}")
+    hash_url = github_hash_url(model_name, f"{args.dir}")
     hash_file = filehash(model_name)
-    if os.path.exists("leaderboard.csv"):
-        leaderboard = pd.read_csv("leaderboard.csv")
+    if os.path.exists(leaderboard_csv):
+        leaderboard = pd.read_csv(leaderboard_csv)
         if hash_file not in leaderboard['hash_file'].values:
-            score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
+            score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
     else:
-        score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
+        score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
 
 
 if __name__ == "__main__":
