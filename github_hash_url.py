@@ -5,6 +5,7 @@
 
 from git import Repo
 import os
+import re
 
 def github_hash_url(script, repo_path):
     ## Commit file and compute GitHub URL
@@ -17,6 +18,6 @@ def github_hash_url(script, repo_path):
     sha = repo.commit().hexsha
     origin = repo.git.remote("get-url", "origin")
     origin = re.sub("\.git", "", origin )
-    url = origin + "/blob/" + sha + "/" + script
+    url = origin + "/blob/" + sha + "/" + os.path.normpath(script)
     return url
 

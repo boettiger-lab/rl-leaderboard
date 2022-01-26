@@ -9,25 +9,25 @@ python read_sheets.py
 while read p; do
   # This slices the directory name from the repo url
   dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
-  echo $dir_name
 
-  # Allow directory to persist
   if [ -d ${dir_name} ] 
   then
+    echo "updating $dir_name"
     cd $dir_name
     git pull --quiet
   else
+    echo "cloning $dir_name"
     git clone --quiet $p 
     cd $dir_name
-    python3 -m venv .virtualenv/$dir_name
+    python3 -m venv .virtualenv
   fi
 
-  # Creating virtual env to install requirements
-  source .virtualenv/$dir_name/bin/activate
-  pip install gitpython wheel sb3_contrib stable-baselines3 &> /dev/null # needed for score_model.py
+  echo "Creating virtual env..."
+  source .virtualenv/bin/activate
+  pip install gitpython wheel sb3_contrib stable-baselines3 &> /dev/null
   pip install -r requirements.txt &> /dev/null
   
-  # Scoring model finally
+  echo "Scoring model..."
   python ../score_model.py -d "." || echo "Error with score_model.py for $p"
   
   # Cleaning up
