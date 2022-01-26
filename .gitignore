@@ -6,3 +6,4 @@
 .virtualenv/*
 .Rbuildignore
 *.Rproj
+__pycache__/*
