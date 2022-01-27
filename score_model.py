@@ -1,12 +1,25 @@
 #!/usr/local/python
 
-from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN
+from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+
 import gym
 import yaml
 import glob
 import os
 import re
 import argparse
+
+# sb3_contrib algorithms are imported conditionally only
+try:
+    from sb3_contrib import ARS, TRPO, MaskablePPO, QRDQN, TQC
+    CONTRIB = {
+         "ARS": ARS,
+         "TRPO": TRPO,
+         "TQC": TQC,
+         "MaskablePPO": MaskablePPO,
+         "QRDQN": QRDQN}
+except ImportError:
+    CONTRIB = {}
 
 from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common.monitor import Monitor
@@ -21,7 +34,11 @@ MODEL = {"PPO": PPO,
          "SAC": SAC,
          "DDPG": DDPG,
          "TD3": TD3,
-         "DQN": DQN}
+         "DQN": DQN,
+         "HER": HER
+        }
+# extend with contrib
+MODEL.update(CONTRIB)
 
 def import_gym(env_name):
     if "fishing" in env_name:
@@ -35,12 +52,13 @@ def import_gym(env_name):
     elif "sir" in env_name:
         import gym_epidemic
 
-def score_model(env_name, agent_name, model_name, team, hash_url, hash_file):
+def score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file):
     import_gym(env_name)
     env = Monitor(gym.make(env_name))
     agent = MODEL[agent_name]
     model = agent.load(model_name[:-4])
     score = evaluate_policy(model, env, n_eval_episodes=100)
+    print(team + ", " + env_name + ", " + agent_name + ": ", score[0])
     leaderboard(agent = agent_name, 
                 env = env_name,
                 team = team, 
@@ -48,28 +66,30 @@ def score_model(env_name, agent_name, model_name, team, hash_url, hash_file):
                 std = score[1],
                 hash_url = hash_url,
                 hash_file = hash_file,
-                file = "leaderboard.csv")
+                file = "../leaderboard.csv")
 
 
+# NOTE: ideally should take a path to leaderboard.csv
 def main():  # noqa: C901
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dir", help="Directory name with model", type=str)
     args = parser.parse_args()
-    model_name = glob.glob(f"models/{args.dir}/*.zip")[0]
-    
-    
-    parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
-    env_name = parsed.group(1)
-    agent_name = parsed.group(2)
-    team = parsed.group(3)
-    hash_url = github_hash_url(model_name, f"models/{args.dir}")
-    hash_file = filehash(model_name)
-    if os.path.exists("leaderboard.csv"):
-        leaderboard = pd.read_csv("leaderboard.csv")
-        if hash_file not in leaderboard['hash_file'].values:
-            score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
-    else:
-        score_model(env_name, agent_name, model_name, team, hash_url, hash_file)
+    model_names = glob.glob(f"{args.dir}/*.zip")
+    leaderboard_csv = "../leaderboard.csv"
+
+    for model_name in model_names:
+        parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
+        env_name = parsed.group(1)
+        agent_name = parsed.group(2)
+        team = parsed.group(3)
+        hash_url = github_hash_url(model_name, f"{args.dir}")
+        hash_file = filehash(model_name)
+        if os.path.exists(leaderboard_csv):
+            leaderboard = pd.read_csv(leaderboard_csv)
+            if hash_file not in leaderboard['hash_file'].values:
+                score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
+        else:
+            score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
 
 
 if __name__ == "__main__":

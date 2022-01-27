@@ -1,26 +1,38 @@
 #!/bin/bash
 set -e # Treat errors as errors
 
+# read_sheets creates a txt with the repo urls from the google form.
 pip install -r requirements.txt > /dev/null
 python read_sheets.py
 
+# consider parallel execution?
 while read p; do
-  # read_sheets creates a txt with the repo urls from the google form.
-  # We then clone each repo and score the models in the repos
-  git clone $p 
   # This slices the directory name from the repo url
   dir_name=$(echo $p | cut -d'/' -f 5 | cut -d'.' -f 1)
-  rm -rf models/$dir_name
-  mv $dir_name models/
-  # Creating virtual env to install requirements
-  python3 -m venv .virtualenv/$dir_name
-  source .virtualenv/$dir_name/bin/activate
-  pip install -r models/$dir_name/requirements.txt > /dev/null
-  pip install gitpython
-  # Scoring model finally
-  python score_model.py -d $dir_name || echo "Error with score_model.py for $p"
+
+  if [ -d ${dir_name} ] 
+  then
+    echo "updating $dir_name"
+    cd $dir_name
+    git pull --quiet
+  else
+    echo "cloning $dir_name"
+    git clone --quiet $p 
+    cd $dir_name
+    python3 -m venv .virtualenv
+  fi
+
+  echo "Creating virtual env..."
+  source .virtualenv/bin/activate
+  pip install gitpython wheel sb3_contrib stable-baselines3 &> /dev/null
+  pip install -r requirements.txt &> /dev/null
+  
+  echo "Scoring model..."
+  python ../score_model.py -d "." || echo "Error with score_model.py for $p"
+  
   # Cleaning up
-  rm -rf models/$dir_name
   deactivate
-  rm -rf .virtualenv/$dir_name
+  cd ..
+  #rm -rf $dir_name
 done <repo_urls.txt
+

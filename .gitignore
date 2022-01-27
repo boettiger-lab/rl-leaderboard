@@ -2,3 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rproj
+.virtualenv/*
+.Rbuildignore
+*.Rproj
+__pycache__/*

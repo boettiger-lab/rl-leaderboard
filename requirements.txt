@@ -2,3 +2,5 @@ numpy
 pandas
 pygsheets
 gitpython
+sb3_contrib
+wheel
