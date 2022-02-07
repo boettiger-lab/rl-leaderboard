@@ -1,0 +1,5 @@
+pyyaml
+gitpython
+wheel
+sb3_contrib
+stable-baselines3

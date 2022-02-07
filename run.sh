@@ -24,7 +24,7 @@ while read p; do
 
   echo "Creating virtual env..."
   source .virtualenv/bin/activate
-  pip install gitpython wheel sb3_contrib stable-baselines3 &> /dev/null
+  pip install -r ../shared_requirements.txt &> /dev/null
   pip install -r requirements.txt &> /dev/null
   
   echo "Scoring model..."
