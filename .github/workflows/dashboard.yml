@@ -1,5 +1,5 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+# completed could be success or failure
+# Additional job checks determine the behavior, see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-a-workflow-based-on-the-conclusion-of-another-workflow
 on:
   workflow_run:
     workflows: [score]
@@ -12,6 +12,7 @@ name: render-rmarkdown
 jobs:
   render-rmarkdown:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     container: rocker/geospatial
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
