@@ -27,6 +27,8 @@ while read p; do
   pip install -r ../shared_requirements.txt &> /dev/null
   if [ -f requirements.txt ]; then
     pip install -r requirements.txt &> /dev/null
+  else
+    pip install stable_baselines3 sb3_contrib
   fi
   echo "Scoring model..."
   python ../score_model.py -d "." || echo "Error with score_model.py for $p"
