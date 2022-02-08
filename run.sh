@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e # Treat errors as errors
+# set -e # Uncomment to treat errors as errors
 
 # read_sheets creates a txt with the repo urls from the google form.
 pip install -r requirements.txt > /dev/null
@@ -24,9 +24,12 @@ while read p; do
 
   echo "Creating virtual env..."
   source .virtualenv/bin/activate
-  pip install gitpython wheel sb3_contrib stable-baselines3 &> /dev/null
-  pip install -r requirements.txt &> /dev/null
-  
+  pip install -r ../shared_requirements.txt &> /dev/null
+  if [ -f requirements.txt ]; then
+    pip install -r requirements.txt &> /dev/null
+  else
+    pip install stable_baselines3 sb3_contrib
+  fi
   echo "Scoring model..."
   python ../score_model.py -d "." || echo "Error with score_model.py for $p"
   
