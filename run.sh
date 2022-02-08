@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e # Treat errors as errors
+# set -e # Uncomment to treat errors as errors
 
 # read_sheets creates a txt with the repo urls from the google form.
 pip install -r requirements.txt > /dev/null
