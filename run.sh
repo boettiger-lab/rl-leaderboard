@@ -25,8 +25,9 @@ while read p; do
   echo "Creating virtual env..."
   source .virtualenv/bin/activate
   pip install -r ../shared_requirements.txt &> /dev/null
-  pip install -r requirements.txt &> /dev/null
-  
+  if [ -f requirements.txt ]; then
+    pip install -r requirements.txt &> /dev/null
+  fi
   echo "Scoring model..."
   python ../score_model.py -d "." || echo "Error with score_model.py for $p"
   
