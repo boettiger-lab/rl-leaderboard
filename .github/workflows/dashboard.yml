@@ -37,6 +37,7 @@ jobs:
           rmarkdown::render("html/epidemic.Rmd", envir = globalenv())
           rmarkdown::render("html/conservation.Rmd", envir = globalenv())
           rmarkdown::render("html/wildfire.Rmd", envir = globalenv())
+          rmarkdown::render("html/nonscored_submissions.Rmd", envir = globalenv())
       - name: Commit results
         run: |
           git config --local user.name "$GITHUB_ACTOR"

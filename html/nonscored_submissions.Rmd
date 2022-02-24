@@ -1,0 +1,31 @@
+---
+title: "Conservation Agents Leaderboard"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: 
+      bootswatch: cosmo
+      
+    navbar:
+    - { title: "Fishing", href: "fishing.html"}
+    - { title: "Conservation", href: "conservation.html"}
+    - { title: "Climate", href: "climate.html"}
+    - { title: "Wildfire", href: "wildfire.html"}
+    - { title: "Epidemics", href: "epidemic.html"}
+    - { title: "Submit Agent", href: "https://forms.gle/tdVmyo4JD7cS4Goo7", 
+        target: "_blank", icon: "fa fa-paper-plane"}
+    - {icon: "fab fa-github", href: "https://github.com/boettiger-lab/rl-leaderboard",
+        target: "_blank"}
+---
+
+Models that have not been posted to the leaderboard due to an error during
+evaluation:
+
+```{python}
+with open("../nonscored_submissions.txt", "r") as f:
+  for i, line in enumerate(f):
+    print(f"{i+1}. " + line + "\n")
+
+```
+
+
