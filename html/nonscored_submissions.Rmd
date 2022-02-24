@@ -22,9 +22,11 @@ Models that have not been posted to the leaderboard due to an error during
 evaluation:
 
 ```{python}
-with open("../nonscored_submissions.txt", "r") as f:
-  for i, line in enumerate(f):
-    print(f"{i+1}. " + line + "\n")
+import os
+if os.path.exists("../nonscored_submissions.txt"):
+  with open("../nonscored_submissions.txt", "r") as f:
+    for i, line in enumerate(f):
+      print(f"{i+1}. " + line + "\n")
 
 ```
 
