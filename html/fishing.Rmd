@@ -2,7 +2,7 @@
 title: "Conservation Agents Leaderboard"
 output:
   flexdashboard::flex_dashboard:
-    vertical_layout: scroll
+    vertical_layout: fill
     storyboard: true
     theme: 
       bootswatch: cosmo
@@ -28,7 +28,7 @@ fishing_leaderboard <- select_gym_leaderboard("Gym Fishing")
 ```
 
 
-### fishing-v0 {data-commentary-width=400}
+### fishing-v0 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v0')
@@ -49,7 +49,7 @@ fishing-v0 implements a simple, single species logistic growth-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v1 {data-commentary-width=400}
+### fishing-v1 {data-commentary-width=350}
 
 
 ```{r} 
@@ -71,7 +71,7 @@ fishing-v1 implements a simple, single species logistic growth-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v2 {data-commentary-width=400}
+### fishing-v2 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v2')
@@ -92,7 +92,7 @@ fishing-v2 implements a single species logistic growth-based fishery with a tipp
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v4 {data-commentary-width=400}
+### fishing-v4 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v4')
@@ -113,7 +113,7 @@ fishing-v4 implements a single species logistic growth-based fishery with model 
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v5 {data-commentary-width=400}
+### fishing-v5 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v5')
@@ -134,7 +134,7 @@ fishing-v5 implements a single species Allen model-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v6 {data-commentary-width=400}
+### fishing-v6 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v6')
@@ -156,7 +156,7 @@ fishing-v6 implements a single species Beverton-Holt model-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v7 {data-commentary-width=400}
+### fishing-v7 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v7')
@@ -177,7 +177,7 @@ fishing-v7 implements a single species May model-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v8 {data-commentary-width=400}
+### fishing-v8 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v8')
@@ -198,7 +198,7 @@ fishing-v8 implements a single species Myers model-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v9 {data-commentary-width=400}
+### fishing-v9 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v9')
@@ -219,7 +219,7 @@ fishing-v9 implements a single species Ricker model-based fishery.
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v10 {data-commentary-width=400}
+### fishing-v10 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v10')
@@ -240,7 +240,7 @@ fishing-v10 implements a single species non-stationary Beverton-Holt model-based
 [Source Code](https://github.com/boettiger-lab/gym_fishing)
 
 
-### fishing-v11 {data-commentary-width=400}
+### fishing-v11 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(fishing_leaderboard, 'fishing-v11')

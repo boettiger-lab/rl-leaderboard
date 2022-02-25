@@ -2,7 +2,7 @@
 title: "Conservation Agents Leaderboard"
 output:
   flexdashboard::flex_dashboard:
-    vertical_layout: scroll
+    vertical_layout: fill
     storyboard: true
     theme: 
       bootswatch: cosmo
