@@ -2,7 +2,7 @@
 title: "Conservation Agents Leaderboard"
 output:
   flexdashboard::flex_dashboard:
-    vertical_layout: scroll
+    vertical_layout: fill
     storyboard: true
     theme: 
       bootswatch: cosmo
@@ -28,7 +28,7 @@ conservation_leaderboard <- select_gym_leaderboard("Gym Conservation")
 ```   
 
 
-### conservation-v0 {data-commentary-width=400}
+### conservation-v0 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v0')
@@ -49,7 +49,7 @@ conservation-v0 considers a single species conservation problem in which the age
 [Source Code](https://github.com/boettiger-lab/gym_conservation)
 
 
-### conservation-v2 {data-commentary-width=400}
+### conservation-v2 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v2')
@@ -91,7 +91,7 @@ conservation-v3 considers a single species conservation problem that has a non-s
 [Source Code](https://github.com/boettiger-lab/gym_conservation)
 
 
-### conservation-v5 {data-commentary-width=400}
+### conservation-v5 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v5')
@@ -112,7 +112,7 @@ conservation-v5 considers a single species conservation problem that has a non-s
 [Source Code](https://github.com/boettiger-lab/gym_conservation)
 
 
-### conservation-v6 {data-commentary-width=400}
+### conservation-v6 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v6')
@@ -133,7 +133,7 @@ conservation-v6 considers a single species conservation problem that has a non-s
 [Source Code](https://github.com/boettiger-lab/gym_conservation)
 
 
-### conservation-v7 {data-commentary-width=400}
+### conservation-v7 {data-commentary-width=350}
 
 ```{r} 
 display_env_leaderboard(conservation_leaderboard, 'conservation-v7')
