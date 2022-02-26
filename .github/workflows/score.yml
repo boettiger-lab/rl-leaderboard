@@ -37,7 +37,7 @@ jobs:
         SHEET_KEY: ${{secrets.SHEET_KEY}}
     - name: score
       run: |
-        ./run.sh | tee score_log.txt
+        ./run.sh 2>&1 | tee score_log.txt
     - name: upload
       run: |
           git config --local user.email "actions@github.com"
