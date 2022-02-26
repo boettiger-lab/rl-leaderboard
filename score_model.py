@@ -1,5 +1,4 @@
 #!/usr/local/python
-
 from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 
 import gym
@@ -91,13 +90,13 @@ def main():  # noqa: C901
                     score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
                 except Exception as error:
                     with open("nonscored_submissions.txt", "w") as f:
-                        f.write(f"{model_name} : {error}")
+                        f.write(f"{model_name} -> {error}")
         else:
             try:
                 score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
             except Exception as error: 
                 with open("nonscored_submissions.txt", "w") as f:
-                    f.write(f"{model_name} : {error}")
+                    f.write(f"{model_name} -> {error}")
 
 
 if __name__ == "__main__":
