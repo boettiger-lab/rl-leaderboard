@@ -8,7 +8,8 @@ def main():
     wks = sheet.worksheet(property='index', value=0)
     df = wks.get_as_df()
     unique_urls = df["Paste link to clone your repo"].unique()
-    np.savetxt("repo_urls.txt", unique_urls, delimiter="\n", fmt="%s")
+    unique_urls = [link.replace(".git", "") for link in unique_urls]
+    np.savetxt("repo_urls.txt", list(set(unique_urls)), delimiter="\n", fmt="%s")
     
 
 if __name__ == '__main__':
