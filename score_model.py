@@ -77,10 +77,14 @@ def main():  # noqa: C901
     leaderboard_csv = "../leaderboard.csv"
 
     for model_name in model_names:
-        parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
-        env_name = parsed.group(1)
-        agent_name = parsed.group(2)
-        team = parsed.group(3)
+        try:
+            parsed = re.search("([a-zA-Z]+\-v\d+)\-([A-Z0-9]+)\-(\w+)\.zip", model_name)
+            env_name = parsed.group(1)
+            agent_name = parsed.group(2)
+            team = parsed.group(3)
+        except AttributeError:
+            print(f"Incorrect naming convention on {model_name[2:]}")
+            continue
         hash_url = github_hash_url(model_name, f"{args.dir}")
         hash_file = filehash(model_name)
         if os.path.exists(leaderboard_csv):
