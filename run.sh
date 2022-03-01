@@ -4,6 +4,7 @@
 # read_sheets creates a txt with the repo urls from the google form.
 pip install -r requirements.txt > /dev/null
 python read_sheets.py
+> nonscored_submissions.txt
 
 # consider parallel execution?
 while read p; do
