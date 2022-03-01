@@ -44,6 +44,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add leaderboard.csv
           git add score_log.txt
+          git add repo_urls.txt
           git add nonscored_submissions.txt || :
           git commit -m 'new scores' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
