@@ -5,7 +5,7 @@ Automatically evaluate, score, and visualize submitted RL agents against relevan
 
 ## How to submit an agent:
 
-1) Make a public github repo ([example](https://github.com/mlap/test-rl-leaderboard1)) that contains:
+1) Make a public github repo ([see template](https://github.com/boettiger-lab/leaderboard_template_sb3)) that contains:
 	- a .zip of parameters of a SB3-trained agent; naming convention on this .zip is ENV-ALGORITHM-TEAMNAME.zip
 	- a requirements.txt file that contains the packages needed to run the agent, notably `gym_*` 
 
