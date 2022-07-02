@@ -12,3 +12,10 @@ Automatically evaluate, score, and visualize submitted RL agents against relevan
 2) Paste the link to clone this repo in [this Google Form](https://forms.gle/tdVmyo4JD7cS4Goo7)
 
 
+
+----
+
+## Acknowledgements
+
+This material is based upon work supported by the National Science Foundation under Grant DBI-1942280. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
