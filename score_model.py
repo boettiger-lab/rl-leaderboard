@@ -97,6 +97,7 @@ def main():  # noqa: C901
                 try:
                     score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
                 except Exception as error:
+                    print(error)
                     # If there is any error, log it
                     with open("../nonscored_submissions.txt", "a") as f:
                         f.write(f"{model_name[2:]} -> {error}\n")
@@ -104,6 +105,7 @@ def main():  # noqa: C901
             try:
                 score_model(env_name, agent_name, model_name, team, hash_url, hash_file, file=leaderboard_csv)
             except Exception as error: 
+                print(error)
                 with open("../nonscored_submissions.txt", "a") as f:
                     f.write(f"{model_name[2:]} -> {error}\n")
 
