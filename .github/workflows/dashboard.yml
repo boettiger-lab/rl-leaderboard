@@ -13,7 +13,7 @@ jobs:
   render-rmarkdown:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    container: rocker/geospatial
+    #container: rocker/geospatial
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
