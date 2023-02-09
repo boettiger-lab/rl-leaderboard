@@ -40,8 +40,7 @@ jobs:
           rmarkdown::render("html/errors.Rmd", envir = globalenv())
       - name: Commit results
         run: |
-          pwd
-          ls
+          git config --global --add safe.directory $GITHUB_WORKSPACE
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add html/*.html
