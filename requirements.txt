@@ -2,5 +2,5 @@ numpy
 pandas
 pygsheets
 gitpython
-sb3_contrib
+sb3_contrib==1.7.0
 wheel
