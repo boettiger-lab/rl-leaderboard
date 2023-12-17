@@ -1,40 +1,33 @@
 
 [notice] A new release of pip is available: 23.0.1 -> 23.3.1
 [notice] To update, run: pip install --upgrade pip
-cloning rl-leaderboard-output-fishing-v0
+cloning millie-conservation-agents
 Creating virtual env...
 Scoring model...
+cloning rl-fishing-test
+Creating virtual env...
+Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/mchxo/rl-fishing-test
 cloning test-rl-leaderboard1
 Creating virtual env...
 Scoring model...
 /home/runner/work/rl-leaderboard/rl-leaderboard/test-rl-leaderboard1/.virtualenv/lib/python3.8/site-packages/gym/envs/registration.py:307: DeprecationWarning: The package name gym_minigrid has been deprecated in favor of minigrid. Please uninstall gym_minigrid and install minigrid with `pip install minigrid`. Future releases will be maintained under the new package name minigrid.
   fn()
-cloning rl-leaderboard-output
-Creating virtual env...
-Scoring model...
-No module named 'algs'
-No module named 'algs'
-No module named 'algs'
-No module named 'algs'
-No module named 'algs'
-No module named 'algs'
-No module named 'algs'
 cloning conservation-vanilla
 Creating virtual env...
 Scoring model...
-Traceback (most recent call last):
-  File "../score_model.py", line 2, in <module>
-    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
-ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/tim08526/conservation-vanilla
-cloning rl-tipping-points
+cloning rl-leaderboard-output
 Creating virtual env...
 Scoring model...
 Traceback (most recent call last):
   File "../score_model.py", line 2, in <module>
     from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/cboettig/rl-tipping-points
+Error with score_model.py for https://github.com/Brandons42/rl-leaderboard-output
 cloning test-rl-leaderboard
 Creating virtual env...
 Scoring model...
@@ -51,19 +44,19 @@ Traceback (most recent call last):
     from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 ModuleNotFoundError: No module named 'stable_baselines3'
 Error with score_model.py for https://github.com/cboettig/carl-climate-agents/
-cloning millie-conservation-agents
+cloning rl-leaderboard-output-fishing-v0
 Creating virtual env...
 Scoring model...
 Traceback (most recent call last):
   File "../score_model.py", line 2, in <module>
     from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/milliechapman/millie-conservation-agents
-cloning rl-fishing-test
+Error with score_model.py for https://github.com/Brandons42/rl-leaderboard-output-fishing-v0
+cloning rl-tipping-points
 Creating virtual env...
 Scoring model...
 Traceback (most recent call last):
   File "../score_model.py", line 2, in <module>
     from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/mchxo/rl-fishing-test
+Error with score_model.py for https://github.com/cboettig/rl-tipping-points
