@@ -1,15 +1,62 @@
 
 [notice] A new release of pip is available: 23.0.1 -> 24.0
 [notice] To update, run: pip install --upgrade pip
+cloning test-rl-leaderboard
+Creating virtual env...
+Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/mlap/test-rl-leaderboard
 cloning rl-leaderboard-output-fishing-v0
 Creating virtual env...
 Scoring model...
-cloning conservation-vanilla
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/Brandons42/rl-leaderboard-output-fishing-v0
+cloning rl-tipping-points
 Creating virtual env...
 Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/cboettig/rl-tipping-points
+cloning rl-leaderboard-output
+Creating virtual env...
+Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/Brandons42/rl-leaderboard-output
+cloning carl-climate-agents
+Creating virtual env...
+Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/cboettig/carl-climate-agents/
 cloning millie-conservation-agents
 Creating virtual env...
 Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/milliechapman/millie-conservation-agents
+cloning conservation-vanilla
+Creating virtual env...
+Scoring model...
+Traceback (most recent call last):
+  File "../score_model.py", line 2, in <module>
+    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
+ModuleNotFoundError: No module named 'stable_baselines3'
+Error with score_model.py for https://github.com/tim08526/conservation-vanilla
 cloning rl-fishing-test
 Creating virtual env...
 Scoring model...
@@ -26,35 +73,3 @@ Traceback (most recent call last):
     from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
 ModuleNotFoundError: No module named 'stable_baselines3'
 Error with score_model.py for https://github.com/mlap/test-rl-leaderboard1
-cloning carl-climate-agents
-Creating virtual env...
-Scoring model...
-Traceback (most recent call last):
-  File "../score_model.py", line 2, in <module>
-    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
-ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/cboettig/carl-climate-agents/
-cloning rl-tipping-points
-Creating virtual env...
-Scoring model...
-Traceback (most recent call last):
-  File "../score_model.py", line 2, in <module>
-    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
-ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/cboettig/rl-tipping-points
-cloning test-rl-leaderboard
-Creating virtual env...
-Scoring model...
-Traceback (most recent call last):
-  File "../score_model.py", line 2, in <module>
-    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
-ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/mlap/test-rl-leaderboard
-cloning rl-leaderboard-output
-Creating virtual env...
-Scoring model...
-Traceback (most recent call last):
-  File "../score_model.py", line 2, in <module>
-    from stable_baselines3 import A2C, PPO, SAC, DDPG, TD3, DQN, HER
-ModuleNotFoundError: No module named 'stable_baselines3'
-Error with score_model.py for https://github.com/Brandons42/rl-leaderboard-output
